@@ -57,10 +57,8 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background:
-        radial-gradient(circle at 20% 20%, rgba(122, 0, 255, 0.18), transparent 28%),
-        radial-gradient(circle at 80% 20%, rgba(255, 27, 123, 0.20), transparent 30%),
-        radial-gradient(circle at 70% 75%, rgba(255, 106, 61, 0.16), transparent 28%),
-        linear-gradient(180deg, #05040a 0%, #090710 45%, #05040a 100%);
+        linear-gradient(rgba(5, 4, 10, 0.72), rgba(5, 4, 10, 0.78)),
+        url("../img/fond-site.png") center center / cover fixed no-repeat;
     color: var(--color-text);
     line-height: 1.6;
     min-height: 100vh;
@@ -160,31 +158,89 @@ textarea {
     font-weight: 700;
     transition: var(--transition);
     border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.28),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+}
+
+.btn:hover::before {
+    left: 140%;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+    background: linear-gradient(135deg, #ff0f7b, #ff4b9d);
     color: #ffffff;
     box-shadow: 0 10px 25px rgba(255, 27, 123, 0.22);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 34px rgba(255, 27, 123, 0.28);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 34px rgba(255, 27, 123, 0.32);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.10);
     color: var(--color-text);
-    border-color: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border-color: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .btn-secondary:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 27, 123, 0.28);
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 27, 123, 0.30);
+    box-shadow: 0 14px 30px rgba(255, 27, 123, 0.14);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    border: 1px solid rgba(255, 75, 157, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.btn-outline:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(255, 27, 123, 0.12);
+    border-color: rgba(255, 27, 123, 0.55);
+    box-shadow: 0 16px 34px rgba(255, 27, 123, 0.20);
+}
+
+.btn-glow {
+    animation: btnPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes btnPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 27, 123, 0);
+    }
+    50% {
+        box-shadow: 0 0 22px rgba(255, 27, 123, 0.18);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(255, 27, 123, 0);
+    }
 }
 
 /* =========================================================
@@ -209,10 +265,17 @@ textarea {
     gap: 20px;
 }
 
-.brand-name {
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+.brand {
+    display: inline-flex;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 56px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 14px rgba(255, 255, 255, 0.08));
 }
 
 .nav-list {
@@ -330,16 +393,15 @@ textarea {
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 16px;
+    align-items: center;
 }
 
 /* =========================================================
    7. INTRO HOME
 ========================================================= */
 .intro-home {
-    background:
-        radial-gradient(circle at 20% 20%, rgba(122, 0, 255, 0.10), transparent 25%),
-        linear-gradient(to bottom, #07060d, #0b0913);
+    background: transparent;
 }
 
 .intro-grid {
@@ -385,9 +447,7 @@ textarea {
    8. SERVICES
 ========================================================= */
 .services-home {
-    background:
-        radial-gradient(circle at 80% 20%, rgba(255, 27, 123, 0.10), transparent 24%),
-        #0a0811;
+    background: transparent;
 }
 
 .services-grid {
@@ -445,9 +505,7 @@ textarea {
    9. PROJETS HOME
 ========================================================= */
 .projects-home {
-    background:
-        radial-gradient(circle at 70% 75%, rgba(255, 106, 61, 0.08), transparent 22%),
-        #08070d;
+    background: transparent;
 }
 .projects-mosaic {
     display: grid;
@@ -513,9 +571,7 @@ textarea {
 ========================================================= */
 .page-hero {
     padding: 180px 0 90px;
-    background:
-        radial-gradient(circle at top left, rgba(215, 184, 154, 0.10), transparent 32%),
-        linear-gradient(to bottom, #0b0b0d, #121218);
+    background: transparent;
 }
 
 .page-hero-small {
@@ -540,7 +596,7 @@ textarea {
    11. APROPOS
 ========================================================= */
 .about-story {
-    background: #101116;
+    background: transparent;
 }
 
 .about-grid {
@@ -556,7 +612,7 @@ textarea {
 }
 
 .values-section {
-    background: #0c0d11;
+    background: transparent;
 }
 
 .values-grid {
@@ -590,7 +646,7 @@ textarea {
    12. PROJETS PAGE
 ========================================================= */
 .projects-page {
-    background: #0e1015;
+    background: transparent;
 }
 
 .projects-grid-page {
@@ -628,9 +684,7 @@ textarea {
    13. CONTACT
 ========================================================= */
 .contact-page {
-    background:
-        radial-gradient(circle at 18% 15%, rgba(122, 0, 255, 0.08), transparent 20%),
-        #0b0911;
+    background: transparent;
 }
 
 .contact-grid {
@@ -702,7 +756,7 @@ textarea {
 ========================================================= */
 .cta-section,
 .studio-cta {
-    background: #0c0d11;
+    background: transparent;
 }
 
 .cta-box {
@@ -832,6 +886,9 @@ textarea {
     .form-row {
         grid-template-columns: 1fr;
     }
+    .brand-logo {
+        height: 46px;
+    }
 }
 
 @media (max-width: 680px) {
@@ -866,4 +923,8 @@ textarea {
     .cta-box {
         padding: 24px;
     }
+    .brand-logo {
+        height: 40px;
+    }
+
 }
