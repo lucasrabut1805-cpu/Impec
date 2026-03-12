@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact — Impec Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Contacte Impec Studio pour parler de ton projet visuel, identité, communication, affiches ou contenus réseaux sociaux."
+    >
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+
+    <div data-include="partials/header.html"></div>
+
+    <main>
+        <section class="page-hero page-hero-small">
+            <div class="container">
+                <p class="eyebrow">Contact</p>
+                <h1>Travaillons ensemble</h1>
+                <p class="hero-narrow">
+                    Tu peux utiliser ce formulaire comme base visuelle pour l’instant,
+                    puis le brancher plus tard à Formspree, EmailJS ou un backend.
+                </p>
+            </div>
+        </section>
+
+        <section class="section contact-page">
+            <div class="container contact-grid">
+                <div class="contact-info-card">
+                    <p class="section-label">Parlons de ton projet</p>
+                    <h2>Une idée, un besoin, une collaboration ?</h2>
+                    <p>
+                        Que ce soit pour une identité visuelle, un visuel événementiel,
+                        des supports réseaux sociaux ou une communication plus globale,
+                        tu peux me présenter ton besoin ici.
+                    </p>
+
+                    <div class="contact-details">
+                        <p><strong>Email :</strong> lucasrabut1805@gmail.com</p>
+                        <p><strong>Instagram :</strong> @impec_studio</p>
+                        <p><strong>Zone :</strong> Disponible à distance et localement</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" placeholder="Ton nom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Ton email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Exemple : identité visuelle, affiche, projet social media">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="7" placeholder="Présente ton projet, ton besoin, ton univers, tes objectifs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+
+    <script src="assets/js/includes.js"></script>
+</body>
+</html>
