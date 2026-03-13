@@ -8,6 +8,30 @@
 }
 
 /* =========================================================
+   0. Animations testé
+========================================================= */
+
+/* animation header */
+@keyframes headerFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: headerFade 0.8s ease forwards;
+}
+.image-reveal {
+    overflow: hidden;
+}
+
+
+/* =========================================================
    1. RESET
 ========================================================= */
 *,
@@ -330,11 +354,20 @@ textarea {
    IMAGE PRESENTATION
 ========================================================= */
 
+.titre-img-1 {
+    display: block;
+    max-width: 1000px;
+    width: 100%;
+    margin: -120px auto  20px auto;
+    opacity: 0.95;
+    padding-top: 5px;
+}
+
 .titre-img {
     display: block;
     max-width: 1000px;
     width: 100%;
-    margin: -60px auto 60px auto;
+    margin: -150px auto -50px auto;
     opacity: 0.95;
     padding-top: 5px;
 }
@@ -591,7 +624,7 @@ textarea {
 .projects-stage {
     position: relative;
     height: 620px;
-    max-width: 980px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -599,8 +632,8 @@ textarea {
     position: absolute;
     top: 0;
     left: 50%;
-    width: min(72vw, 430px);
-    aspect-ratio: 4 / 5;
+    width: min(82vw, 760px);
+    aspect-ratio: 16 / 10;
     border-radius: 28px;
     overflow: hidden;
     background: #111111;
@@ -608,13 +641,17 @@ textarea {
     border: 1px solid rgba(255, 255, 255, 0.10);
     transform-origin: center center;
     transition: transform 0.55s ease, opacity 0.55s ease, filter 0.55s ease, box-shadow 0.55s ease;
+    display: block;
+    cursor: pointer;
 }
 
 .project-card-stack img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     transition: transform 0.6s ease;
+    background: #0a0a0f;
 }
 
 .project-card-stack:hover img {
@@ -638,48 +675,6 @@ textarea {
 
 .project-overlay h3 {
     font-size: 1.5rem;
-}
-
-.project-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 68px;
-    height: 68px;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    line-height: 1;
-    color: #ffffff;
-    cursor: pointer;
-    user-select: none;
-    z-index: 20;
-    background: rgba(10, 10, 14, 0.52);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-}
-
-.project-arrow:hover {
-    transform: translateY(-50%) scale(1.05);
-    background: rgba(235, 7, 7, 0.18);
-    border-color: rgba(235, 7, 7, 0.45);
-}
-
-.project-arrow-left {
-    left: 3%;
-}
-
-.project-arrow-right {
-    right: 3%;
-}
-
-.projects-controls {
-    display: none;
 }
 
 .center-button {
@@ -710,9 +705,6 @@ textarea {
     filter: blur(1px);
 }
 
-#project-1:checked ~ .controls-1 {
-    display: block;
-}
 
 /* Etat 2 */
 #project-2:checked ~ .projects-stage .card-2 {
@@ -737,9 +729,6 @@ textarea {
     filter: blur(1px);
 }
 
-#project-2:checked ~ .controls-2 {
-    display: block;
-}
 
 /* Etat 3 */
 #project-3:checked ~ .projects-stage .card-3 {
@@ -764,9 +753,6 @@ textarea {
     filter: blur(1px);
 }
 
-#project-3:checked ~ .controls-3 {
-    display: block;
-}
 
 /* =========================================================
    10. PAGE HERO
@@ -853,8 +839,8 @@ textarea {
 
 .projects-grid-page {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 26px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
 .project-card-page {
@@ -993,7 +979,7 @@ textarea {
    15. FOOTER
 ========================================================= */
 .site-footer {
-    background: #09090b;
+    background: transparent;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
