@@ -46,7 +46,7 @@
              INTRO / PRESENTATION RAPIDE
         ========================================================== -->
         <section class="section intro-home">
-            <img src="assets/img/impecqui.png" alt="Présentation" class="presentation-img">
+            <img src="assets/img/impecqui.png" alt="Présentation" class="titre-img">
             <div class="container intro-grid">
                 <div class="intro-card intro-card-large">
                     <p class="section-label">Studio</p>
@@ -81,6 +81,7 @@
              SERVICES
         ========================================================== -->
         <section class="section services-home">
+            <img src="assets/img/mesprestations.png" alt="Services" class="titre-img">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-label">Services</p>
@@ -125,53 +126,67 @@
         <!-- =========================================================
              PROJETS EN APERCU
         ========================================================== -->
+        
         <section class="section projects-home">
+        <img src="assets/img/mesréalistations.png" alt="Réalisations" class="titre-img">
             <div class="container">
                 <div class="section-heading">
                     <p class="section-label">Projets</p>
                     <h2>Quelques réalisations récentes</h2>
                     <p>
-                        En attendant les vrais projets de ton frère, tu peux garder ces visuels
-                        comme placeholders.
+                        Une sélection de créations mises en avant dans un format plus visuel.
                     </p>
                 </div>
 
-                <div class="projects-mosaic">
-                    <article class="project-tile project-large">
-                        <img src="assets/img/img1.jpg" alt="Projet identité visuelle">
-                        <div class="project-overlay">
-                            <p class="project-category">Identité visuelle</p>
-                            <h3>Projet 01</h3>
-                        </div>
-                    </article>
+                <div class="projects-showcase">
+                    <input type="radio" name="project-slider" id="project-1" checked>
+                    <input type="radio" name="project-slider" id="project-2">
+                    <input type="radio" name="project-slider" id="project-3">
 
-                    <article class="project-tile">
-                        <img src="assets/img/img2.jpg" alt="Projet communication sportive">
-                        <div class="project-overlay">
-                            <p class="project-category">Communication</p>
-                            <h3>Projet 02</h3>
-                        </div>
-                    </article>
+                    <div class="projects-stage">
+                        <article class="project-card-stack card-1">
+                            <img src="assets/img/img1.jpg" alt="Projet 01">
+                            <div class="project-overlay">
+                                <p class="project-category">Identité visuelle</p>
+                                <h3>Projet 01</h3>
+                            </div>
+                        </article>
 
-                    <article class="project-tile">
-                        <img src="assets/img/img3.jpg" alt="Projet design réseaux sociaux">
-                        <div class="project-overlay">
-                            <p class="project-category">Réseaux sociaux</p>
-                            <h3>Projet 03</h3>
-                        </div>
-                    </article>
+                        <article class="project-card-stack card-2">
+                            <img src="assets/img/img2.jpg" alt="Projet 02">
+                            <div class="project-overlay">
+                                <p class="project-category">Communication</p>
+                                <h3>Projet 02</h3>
+                            </div>
+                        </article>
 
-                    <article class="project-tile project-wide">
-                        <img src="assets/img/img4.jpg" alt="Projet studio créatif">
-                        <div class="project-overlay">
-                            <p class="project-category">Studio / Branding</p>
-                            <h3>Projet 04</h3>
-                        </div>
-                    </article>
+                        <article class="project-card-stack card-3">
+                            <img src="assets/img/img3.jpg" alt="Projet 03">
+                            <div class="project-overlay">
+                                <p class="project-category">Réseaux sociaux</p>
+                                <h3>Projet 03</h3>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="projects-controls controls-1">
+                        <label for="project-3" class="project-arrow project-arrow-left" aria-label="Projet précédent">‹</label>
+                        <label for="project-2" class="project-arrow project-arrow-right" aria-label="Projet suivant">›</label>
+                    </div>
+
+                    <div class="projects-controls controls-2">
+                        <label for="project-1" class="project-arrow project-arrow-left" aria-label="Projet précédent">‹</label>
+                        <label for="project-3" class="project-arrow project-arrow-right" aria-label="Projet suivant">›</label>
+                    </div>
+
+                    <div class="projects-controls controls-3">
+                        <label for="project-2" class="project-arrow project-arrow-left" aria-label="Projet précédent">‹</label>
+                        <label for="project-1" class="project-arrow project-arrow-right" aria-label="Projet suivant">›</label>
+                    </div>
                 </div>
 
                 <div class="center-button">
-                    <a href="projets.html" class="btn btn-primary">Voir tous les projets</a>
+                    <a href="projets.html" class="btn btn-hero">Voir tous les projets</a>
                 </div>
             </div>
         </section>

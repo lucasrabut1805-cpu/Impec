@@ -4,7 +4,7 @@
     font-style: italic;
     font-display: swap;
     src:
-        url("../fonts/TacticSans-BlkIt.otf") format("woff2"),
+        url("../fonts/TacticSans-BlkIt.otf") format("opentype"),
 }
 
 /* =========================================================
@@ -330,12 +330,13 @@ textarea {
    IMAGE PRESENTATION
 ========================================================= */
 
-.presentation-img {
+.titre-img {
     display: block;
     max-width: 1000px;
     width: 100%;
-    margin: 40px auto;
+    margin: -60px auto 60px auto;
     opacity: 0.95;
+    padding-top: 5px;
 }
 
 /* =========================================================
@@ -347,7 +348,7 @@ textarea {
     overflow: hidden;
     display: flex;
     align-items: flex-end;
-    padding: 180px 0 120px;
+    padding: 100px 0 175px;
 }
 
 .hero-media,
@@ -364,15 +365,35 @@ textarea {
     object-fit: cover;
 }
 
+.hero-media {
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) 72%,
+        rgba(0,0,0,0.6) 82%,
+        rgba(0,0,0,0.35) 88%,
+        rgba(0,0,0,0.15) 94%,
+        rgba(0,0,0,0) 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,1) 72%,
+        rgba(0,0,0,0.55) 82%,
+        rgba(0,0,0,0.25) 88%,
+        rgba(0,0,0,0) 94%,
+        rgba(0,0,0,0) 100%
+    );
+}
+
 .hero-overlay {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.72)),
-        linear-gradient(to right, rgba(5, 4, 10, 0.88), rgba(5, 4, 10, 0.26)),
-        radial-gradient(circle at 65% 28%, rgba(255, 27, 123, 0.20), transparent 24%),
-        radial-gradient(circle at 82% 72%, rgba(255, 106, 61, 0.14), transparent 24%),
-        radial-gradient(circle at 30% 18%, rgba(122, 0, 255, 0.12), transparent 22%);
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.38)),
+        linear-gradient(to right, rgba(5, 4, 10, 0.82), rgba(5, 4, 10, 0.18)),
+        radial-gradient(circle at 65% 28%, rgba(235, 7, 7, 0.10), transparent 24%),
+        radial-gradient(circle at 82% 72%, rgba(235, 7, 7, 0.08), transparent 24%);
 }
 
 .hero-content {
@@ -446,6 +467,8 @@ textarea {
    7. INTRO HOME
 ========================================================= */
 .intro-home {
+    position: relative;
+    padding-top: 110px;
     background: transparent;
 }
 
@@ -552,48 +575,57 @@ textarea {
    9. PROJETS HOME
 ========================================================= */
 .projects-home {
+    position: relative;
     background: transparent;
 }
-.projects-mosaic {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr 1fr;
-    gap: 20px;
-}
 
-.project-tile {
+.projects-showcase {
     position: relative;
+    margin-top: 24px;
+}
+
+.projects-showcase input[type="radio"] {
+    display: none;
+}
+
+.projects-stage {
+    position: relative;
+    height: 620px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.project-card-stack {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(72vw, 430px);
+    aspect-ratio: 4 / 5;
+    border-radius: 28px;
     overflow: hidden;
-    min-height: 320px;
-    border-radius: var(--radius-md);
-    background: #161616;
+    background: #111111;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    transform-origin: center center;
+    transition: transform 0.55s ease, opacity 0.55s ease, filter 0.55s ease, box-shadow 0.55s ease;
 }
 
-.project-large {
-    grid-row: span 2;
-    min-height: 660px;
-}
-
-.project-wide {
-    grid-column: span 2;
-    min-height: 320px;
-}
-
-.project-tile img {
+.project-card-stack img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
 }
 
-.project-tile:hover img {
-    transform: scale(1.05);
+.project-card-stack:hover img {
+    transform: scale(1.03);
 }
 
 .project-overlay {
     position: absolute;
     inset: auto 0 0 0;
-    padding: 24px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.08));
+    padding: 28px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.08));
 }
 
 .project-category {
@@ -608,9 +640,132 @@ textarea {
     font-size: 1.5rem;
 }
 
+.project-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 68px;
+    height: 68px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    line-height: 1;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    z-index: 20;
+    background: rgba(10, 10, 14, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.project-arrow:hover {
+    transform: translateY(-50%) scale(1.05);
+    background: rgba(235, 7, 7, 0.18);
+    border-color: rgba(235, 7, 7, 0.45);
+}
+
+.project-arrow-left {
+    left: 3%;
+}
+
+.project-arrow-right {
+    right: 3%;
+}
+
+.projects-controls {
+    display: none;
+}
+
 .center-button {
-    margin-top: 38px;
+    margin-top: 44px;
     text-align: center;
+}
+
+/* Etat 1 */
+#project-1:checked ~ .projects-stage .card-1 {
+    z-index: 3;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    filter: blur(0);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+}
+
+#project-1:checked ~ .projects-stage .card-2 {
+    z-index: 2;
+    opacity: 0.8;
+    transform: translateX(-12%) translateY(28px) scale(0.9);
+    filter: blur(1px);
+}
+
+#project-1:checked ~ .projects-stage .card-3 {
+    z-index: 1;
+    opacity: 0.62;
+    transform: translateX(-88%) translateY(28px) scale(0.9);
+    filter: blur(1px);
+}
+
+#project-1:checked ~ .controls-1 {
+    display: block;
+}
+
+/* Etat 2 */
+#project-2:checked ~ .projects-stage .card-2 {
+    z-index: 3;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    filter: blur(0);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+}
+
+#project-2:checked ~ .projects-stage .card-3 {
+    z-index: 2;
+    opacity: 0.8;
+    transform: translateX(-12%) translateY(28px) scale(0.9);
+    filter: blur(1px);
+}
+
+#project-2:checked ~ .projects-stage .card-1 {
+    z-index: 1;
+    opacity: 0.62;
+    transform: translateX(-88%) translateY(28px) scale(0.9);
+    filter: blur(1px);
+}
+
+#project-2:checked ~ .controls-2 {
+    display: block;
+}
+
+/* Etat 3 */
+#project-3:checked ~ .projects-stage .card-3 {
+    z-index: 3;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    filter: blur(0);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+}
+
+#project-3:checked ~ .projects-stage .card-1 {
+    z-index: 2;
+    opacity: 0.8;
+    transform: translateX(-12%) translateY(28px) scale(0.9);
+    filter: blur(1px);
+}
+
+#project-3:checked ~ .projects-stage .card-2 {
+    z-index: 1;
+    opacity: 0.62;
+    transform: translateX(-88%) translateY(28px) scale(0.9);
+    filter: blur(1px);
+}
+
+#project-3:checked ~ .controls-3 {
+    display: block;
 }
 
 /* =========================================================
