@@ -9,6 +9,7 @@
         content="Impec Studio accompagne marques, clubs et projets avec des créations graphiques fortes : identité visuelle, affiches, réseaux sociaux et motion design."
     >
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body data-page="accueil">
 
@@ -26,13 +27,13 @@
             <div class="hero-overlay"></div>
 
             <div class="container hero-content">
-                <p class="hero-kicker">Communication &nbsp; - &nbsp; Graphisme &nbsp; - &nbsp; Marketing</p>
+                <p class="hero-kicker js-split-words">Communication &nbsp; - &nbsp; Graphisme &nbsp; - &nbsp; Marketing</p>
 
-                <h1 class="hero-title">IMPEC STUDIO</h1>
+                <h1 class="hero-title js-split-words">IMPEC STUDIO</h1>
 
-                <p class="hero-tagline">« Votre image, notre terrain de jeu »</p>
+                <p class="hero-tagline js-split-words">« Votre image, notre terrain de jeu »</p>
 
-                <p class="hero-signature">Lucas Rabut</p><br>
+                <p class="hero-signature js-split-words">Lucas Rabut</p><br>
 
                 <div class="hero-actions">
                     <a href="apropos.html" class="btn btn-hero">Impec, c’est quoi ?</a>
@@ -48,7 +49,7 @@
         <section class="section intro-home">
             <img src="assets/img/impecqui.png" alt="Présentation" class="titre-img-1">
             <div class="container intro-grid">
-                <div class="intro-card intro-card-large">
+                <div class="intro-card intro-card-large" data-aos="fade-up" data-aos-delay="0" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
                     <p class="section-label">Studio</p>
                     <p>
                         Chaque projet est pensé pour transmettre une identité forte, cohérente
@@ -58,7 +59,7 @@
                     <a href="apropos.html" class="text-link">En savoir plus sur le studio</a>
                 </div>
 
-                <div class="intro-card">
+                <div class="intro-card" data-aos="fade-up" data-aos-delay="120" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
                     <p class="section-label">Création</p>
                     <h3>Direction artistique</h3>
                     <p>
@@ -66,7 +67,7 @@
                     </p>
                 </div>
 
-                <div class="intro-card">
+                <div class="intro-card" data-aos="fade-up" data-aos-delay="240" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
                     <p class="section-label">Impact</p>
                     <h3>Supports efficaces</h3>
                     <p>
@@ -81,45 +82,51 @@
         ========================================================== -->
         <section class="section services-home">
             <img src="assets/img/mesprestations.png" alt="Services" class="titre-img">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-label">Services</p>
-                    <p>
-                        Une sélection de prestations autour de l’identité visuelle,
-                        de la communication et des contenus graphiques.
-                    </p>
+            <div class="container container-wide">
+                <div class="section-heading services-heading">
+                    <p class="section-label">Méthode</p>
                 </div>
 
-                <div class="services-grid">
-                    <article class="service-card">
-                        <span class="service-number">01</span>
-                        <h3>Identité visuelle</h3>
+                <div class="services-process-grid">
+                    <article class="service-card process-card process-card-1" data-aos="fade-up" data-aos-delay="0" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
+                        <p class="process-step-number">Étape 1</p>
+                        <h3>Écoute</h3>
                         <p>
-                            Logo, univers graphique, couleurs, typographies et direction visuelle
-                            pour poser des bases solides.
+                            Nous discutons ensemble de votre projet, de vos besoins et de vos objectifs.
+                            J’apprends à vous connaître et prends tous les éléments en compte.
                         </p>
                     </article>
 
-                    <article class="service-card">
-                        <span class="service-number">02</span>
-                        <h3>Affiches & visuels event</h3>
+                    <article class="service-card process-card process-card-2" data-aos="fade-up" data-aos-delay="120" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
+                        <p class="process-step-number">Étape 2</p>
+                        <h3>Création</h3>
                         <p>
-                            Création de supports pour événements, campagnes, promotions,
-                            matchs, lancements ou communication locale.
+                            Je recherche, développe mes idées de manière à trouver celle qui vous
+                            ressemblera et vous représentera le mieux.
                         </p>
                     </article>
 
-                    <article class="service-card">
-                        <span class="service-number">03</span>
-                        <h3>Réseaux sociaux</h3>
+                    <article class="service-card process-card process-card-3" data-aos="fade-up" data-aos-delay="240" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
+                        <p class="process-step-number">Étape 3</p>
+                        <h3>Mise en place</h3>
                         <p>
-                            Templates, publications, stories, carrousels et visuels pensés
-                            pour renforcer la présence en ligne.
+                            Je décline cette idée en fonction du ou des supports de communication choisis,
+                            en adéquation avec le style défini.
+                        </p>
+                    </article>
+
+                    <article class="service-card process-card process-card-4" data-aos="fade-up" data-aos-delay="360" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
+                        <p class="process-step-number">Étape 4</p>
+                        <h3>Fabrication / pose</h3>
+                        <p>
+                            Je prépare tous les fichiers pour la fabrication, et gère le suivi de votre
+                            projet jusqu’à la livraison / pose des supports.
                         </p>
                     </article>
                 </div>
             </div>
         </section>
+            
 
         <!-- =========================================================
              PROJETS EN APERCU
@@ -177,7 +184,7 @@
              CTA CONTACT
         ========================================================== -->
         <section class="section cta-section">
-            <div class="container cta-box">
+            <div class="container cta-box" data-aos="fade-up" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
                 <div>
                     <p class="section-label">Contact</p>
                     <h2>Un projet à lancer ou une image à faire évoluer ?</h2>
@@ -195,5 +202,8 @@
     <div data-include="partials/footer.html"></div>
 
     <script src="assets/js/includes.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 </body>
 </html>

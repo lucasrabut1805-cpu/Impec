@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Projet 01 — Impec Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+
+<body>
+
+<div data-include="partials/header.html"></div>
+
+<main>
+
+<section class="project-hero-full">
+    <img src="assets/img/projet1.jpeg" alt="Projet 01" class="project-hero-img">
+
+    <div class="project-hero-overlay">
+        <div class="container">
+            <div class="project-hero-copy reveal-on-scroll is-visible">
+                <p class="project-category project-kicker">Identité visuelle</p>
+                <h1 class="project-hero-title">PJBC</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section project-context">
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <img src="assets/img/mesréalistations.png" alt="Services" class="titre-img-1">
+
+        <p class="section-label">Le projet</p>
+
+        <p class="project-text">
+            Ce projet avait pour objectif de construire une identité visuelle forte
+            autour d’un univers moderne. L’approche a été pensée pour créer une
+            cohérence graphique sur plusieurs supports de communication.
+        </p>
+    </div>
+</section>
+
+<section class="section project-services">
+    <div class="container">
+        <div class="services-grid">
+
+            <div class="service-card reveal-on-scroll" data-aos="fade-up">
+                <img src="assets/img/img1.jpg" alt="Analyse du projet">
+                <div class="service-card-body">
+                    <span>01</span>
+                    <h3>Analyse</h3>
+                    <p>
+                        Comprendre le besoin du projet, son univers et les attentes visuelles.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card reveal-on-scroll" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/img/img2.jpg" alt="Direction visuelle du projet">
+                <div class="service-card-body">
+                    <span>02</span>
+                    <h3>Direction visuelle</h3>
+                    <p>
+                        Définition des couleurs, typographies et de l'identité graphique.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card reveal-on-scroll" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/img/img1.jpg" alt="Création graphique du projet">
+                <div class="service-card-body">
+                    <span>03</span>
+                    <h3>Création</h3>
+                    <p>
+                        Réalisation des supports graphiques et déclinaisons visuelles.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card reveal-on-scroll" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/img/img2.jpg" alt="Finalisation du projet">
+                <div class="service-card-body">
+                    <span>04</span>
+                    <h3>Finalisation</h3>
+                    <p>
+                        Optimisation des visuels pour diffusion et cohérence globale.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section project-gallery">
+    <div class="container">
+        <h2>Visuels du projet</h2>
+
+        <div class="gallery-mosaic">
+            <figure class="gallery-item large reveal-on-scroll">
+                <img src="assets/img/img1.jpg" alt="Visuel principal du projet 1">
+            </figure>
+
+            <figure class="gallery-item tall reveal-on-scroll">
+                <img src="assets/img/img2.jpg" alt="Déclinaison graphique du projet 1">
+            </figure>
+
+            <figure class="gallery-item reveal-on-scroll">
+                <img src="assets/img/projet1.jpeg" alt="Création visuelle du projet 1">
+            </figure>
+
+            <figure class="gallery-item wide reveal-on-scroll">
+                <img src="assets/img/img1.jpg" alt="Support de communication du projet 1">
+            </figure>
+
+            <figure class="gallery-item reveal-on-scroll">
+                <img src="assets/img/img2.jpg" alt="Affiche du projet 1">
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="section other-projects">
+    <div class="container">
+        <h2>Autres projets</h2>
+
+        <div class="projects-grid-page">
+            <a href="projet2.html" class="project-card-page">
+                <img src="assets/img/projet2.jpeg" alt="Projet 02">
+                <div class="project-card-content">
+                    <h3>Projet 02</h3>
+                </div>
+            </a>
+
+            <a href="projet3.html" class="project-card-page">
+                <img src="assets/img/projet3.jpeg" alt="Projet 03">
+                <div class="project-card-content">
+                    <h3>Projet 03</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section cta-section">
+    <div class="container cta-box">
+        <div>
+            <p class="section-label">Contact</p>
+            <h2>Un projet en tête ?</h2>
+            <p>
+                On peut échanger ensemble autour de ton projet et de ton univers visuel.
+            </p>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary">
+            Lancer un projet
+        </a>
+    </div>
+</section>
+
+</main>
+
+<div data-include="partials/footer.html"></div>
+
+<script src="assets/js/includes.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+AOS.init({
+    duration: 900,
+    once: false,
+    offset: 80
+});
+</script>
+</body>
+</html>

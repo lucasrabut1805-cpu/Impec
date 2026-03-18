@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PJBC — Impec Studio V4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div data-include="partials/header.html"></div>
+
+    <main class="v4-page">
+
+        <section class="v4-hero">
+            <img src="assets/img/v4.jpg" alt="Hero créatif V4" class="v4-hero-image reveal-on-scroll">
+
+            <div class="v4-hero-overlay">
+                <div class="v4-container">
+                    <div class="v4-hero-copy reveal-on-scroll">
+                        <p class="v4-kicker">Impec Studio / Case Study</p>
+                        <h1>Une vision sportive<br>plus éditoriale</h1>
+                        <p>
+                            Une page projet pensée comme une expérience visuelle :
+                            moins classique, plus cinématographique, plus marquante.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="v4-overview">
+            <div class="v4-container">
+                <div class="v4-overview-grid">
+                    <div class="v4-overview-left reveal-on-scroll">
+                        <p class="v4-label">Overview</p>
+                        <h2>PJBC — identité, intensité, cohérence</h2>
+                    </div>
+
+                    <div class="v4-overview-right reveal-on-scroll">
+                        <p>
+                            Cette version met davantage l’accent sur la mise en scène du projet,
+                            avec une narration plus visuelle et une structure plus premium.
+                        </p>
+
+                        <div class="v4-meta">
+                            <div class="v4-meta-card reveal-on-scroll">
+                                <span>Client</span>
+                                <strong>PJBC</strong>
+                            </div>
+                            <div class="v4-meta-card reveal-on-scroll">
+                                <span>Année</span>
+                                <strong>2025</strong>
+                            </div>
+                            <div class="v4-meta-card reveal-on-scroll">
+                                <span>Scope</span>
+                                <strong>Branding visuel</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="v4-panels">
+            <div class="v4-container-wide">
+                <div class="v4-panel-grid">
+                    <div class="v4-panel v4-panel-large reveal-on-scroll">
+                        <img src="assets/img/projet1.jpeg" alt="Projet principal">
+                    </div>
+
+                    <div class="v4-panel reveal-on-scroll">
+                        <img src="assets/img/img1.jpg" alt="Visuel 1">
+                    </div>
+
+                    <div class="v4-panel reveal-on-scroll">
+                        <img src="assets/img/img2.jpg" alt="Visuel 2">
+                    </div>
+
+                    <div class="v4-panel reveal-on-scroll">
+                        <img src="assets/img/img1.jpg" alt="Visuel 3">
+                    </div>
+
+                    <div class="v4-panel reveal-on-scroll">
+                        <img src="assets/img/img2.jpg" alt="Visuel 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="v4-sequence">
+            <div class="v4-container">
+                <div class="v4-sequence-heading reveal-on-scroll">
+                    <p class="v4-label">Sequence</p>
+                    <h2>Une page pensée comme un rythme visuel</h2>
+                </div>
+
+                <div class="v4-sequence-list">
+                    <article class="v4-sequence-item reveal-on-scroll">
+                        <span>01</span>
+                        <div>
+                            <h3>Un hero plus marquant</h3>
+                            <p>Un visuel fort dès l’entrée, avec une sensation plus éditoriale et plus mode.</p>
+                        </div>
+                    </article>
+
+                    <article class="v4-sequence-item reveal-on-scroll">
+                        <span>02</span>
+                        <div>
+                            <h3>Des images mieux mises en scène</h3>
+                            <p>Les visuels deviennent des éléments narratifs et non plus seulement une galerie.</p>
+                        </div>
+                    </article>
+
+                    <article class="v4-sequence-item reveal-on-scroll">
+                        <span>03</span>
+                        <div>
+                            <h3>Un ADN plus premium</h3>
+                            <p>Le site reste sombre et impactant, mais gagne en style et en respiration.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="v4-final-cta">
+            <div class="v4-container">
+                <div class="v4-final-box reveal-on-scroll">
+                    <p class="v4-label">Contact</p>
+                    <h2>Construire un projet qui se distingue</h2>
+                    <p>
+                        Une direction visuelle forte ne sert pas juste à embellir :
+                        elle rend ton univers plus identifiable et plus mémorable.
+                    </p>
+                    <a href="contact.html" class="v4-btn">Discuter du projet</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="assets/js/includes.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const reveals = document.querySelectorAll(".reveal-on-scroll");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                } else {
+                    entry.target.classList.remove("is-visible");
+                }
+            });
+        }, {
+            threshold: 0.16
+        });
+
+        reveals.forEach((el) => observer.observe(el));
+    });
+    </script>
+
+</body>
+</html>
