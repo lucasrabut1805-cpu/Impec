@@ -55,7 +55,8 @@
         <!-- =========================================================
              INTRO / PRESENTATION RAPIDE
         ========================================================== -->
-        <section class="section intro-home">
+        <section class="section intro-home stack-section">
+            <div class="stack-page">
             <img src="assets/img/impecqui.png" alt="Présentation" class="titre-img-1">
 
             <div class="container">
@@ -85,12 +86,14 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
 
         <!-- =========================================================
-             SERVICES
+             SERVICES/ PRESTATIONS
         ========================================================== -->
-        <section class="section services-home">
+        <section class="section services-home stack-section">
+            <div class="stack-page">
             <img src="assets/img/mesprestations.png" alt="Services" class="titre-img">
             <div class="container container-wide">
                 <div class="section-heading services-heading">
@@ -107,20 +110,27 @@
                                 Création d'une image forte pour ton entreprise, club ou événements. <br>
                                 Objectif : être reconnaissable, professionnalisé votre image et attirer des partenaire et Sponsors.</p>
                                 <br>
-                                <button class="btn btn-hero">
-                                    <span>Logo</span>
-                                    <span class="btn-fill-line"></span>
-                                </button>
-                                <br>
-                                <button class="btn btn-hero">
-                                    <span>Déclinaison</span>
-                                    <span class="btn-fill-line"></span>
-                                </button> 
-                                <br>
-                                <button class="btn btn-hero">
-                                    <span>Support</span>
-                                    <span class="btn-fill-line"></span>
-                                </button>
+                                <div class="btn-group">
+                                    <button class="btn btn-hero">
+                                        <span>Logo</span>
+                                        <span class="btn-fill-line"></span>
+                                    </button>
+
+                                    <button class="btn btn-hero">
+                                        <span>Déclinaison</span>
+                                        <span class="btn-fill-line"></span>
+                                    </button>
+
+                                    <button class="btn btn-hero">
+                                        <span>Support</span>
+                                        <span class="btn-fill-line"></span>
+                                    </button>
+
+                                    <button class="btn btn-hero">
+                                        <span>4ème</span>
+                                        <span class="btn-fill-line"></span>
+                                    </button>
+                                </div>
                         </div>
                     </div>
 
@@ -133,26 +143,27 @@
                                 Des visuels important pour mettre en valeur ton entreprise club ou événements. <br>
                                 Objectif : Attirer l'attention, valorisé vos événements et marquer les esprits.</p>
                                 <br>
+                                <div class="btn-group">
                                 <button class="btn btn-hero">
                                     <span>Affiche</span>
                                     <span class="btn-fill-line"></span>
                                 </button>
-                                <br>
+                                
                                 <button class="btn btn-hero">
                                     <span>Visuels Réseaux</span>
                                     <span class="btn-fill-line"></span>
                                 </button> 
-                                <br>
+                                
                                 <button class="btn btn-hero">
                                     <span>Flyer</span>
                                     <span class="btn-fill-line"></span>
                                 </button>
-                                <br>
+                            
                                 <button class="btn btn-hero" >
                                     <span>Dossier Sponsors</span>
                                     <span class="btn-fill-line"></span>
                                 </button>
-                                <br>
+                            </div>
                         </div>
                     </div>
 
@@ -165,25 +176,27 @@
                                 Une stratégie et des contenus pour developper votre visibilité. <br>
                                 Objectif : Gagner en visibilité, engager votre audience et renforcer votre image.</p>
                                 <br>
+                                <div class="btn-group">
                                 <button class="btn btn-hero">
                                     <span>Templates</span>
                                     <span class="btn-fill-line"></span>
                                 </button>
-                                <br>
+          
                                 <button class="btn btn-hero">
                                     <span>Gestion de page</span>
                                     <span class="btn-fill-line"></span>
                                 </button> 
-                                <br>
+                            
                                 <button class="btn btn-hero">
                                     <span>Publication</span>
                                     <span class="btn-fill-line"></span>
                                 </button>
-                                <br>
+                         
                                 <button class="btn btn-hero" >
                                     <span>Sponsorisation</span>
                                     <span class="btn-fill-line"></span>
                                 </button>
+                                </div>
                         </div>
                     </div>
                     
@@ -195,6 +208,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
             
 
@@ -202,7 +216,8 @@
              PROJETS EN APERCU
         ========================================================== -->
         
-        <section class="section projects-home">
+        <section class="section projects-home stack-section">
+        <div class="stack-page">
         <img src="assets/img/mesréalistations.png" alt="Réalisations" class="titre-img">
             <div class="container">
                 <div class="section-heading">
@@ -242,12 +257,14 @@
                     </a>
                 </div>
             </div>
+            </div>
         </section>
 
         <!-- =========================================================
              CTA CONTACT
         ========================================================== -->
-        <section class="section cta-section">
+        <section class="section cta-section stack-section">
+            <div class="stack-page">
             <div class="container cta-box" data-aos="fade-up" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
                 <div>
                     <p class="section-label">Contact</p>
@@ -263,6 +280,7 @@
                     <span class="btn-fill-line"></span>
                 </a>
             </div>
+            </div>
         </section>
     </main>
 
@@ -271,6 +289,38 @@
     <script src="assets/js/includes.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const panels = gsap.utils.toArray(".home-stack-panel");
+    const scene = document.querySelector(".home-stack-scene");
+
+    if (!scene || panels.length < 2) return;
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: scene,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1.1
+        }
+    });
+
+    panels.forEach((panel, index) => {
+        if (index === 0) return;
+
+        tl.to(panel, {
+            yPercent: -100,
+            ease: "none",
+            duration: 1
+        });
+    });
+});
+</script>
 </body>
 </html>
