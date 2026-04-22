@@ -213,25 +213,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- CTA -->
-        <section class="section cta-section">
-            <div class="container cta-box reveal-on-scroll reveal-bottom">
-                <div>
-                    <p class="section-label">Contact</p>
-                    <h2>Tu veux une identité visuelle qui marque vraiment ?</h2>
-                    <p>
-                        On peut construire ensemble un univers graphique cohérent, impactant et pensé pour ton projet.
-                    </p>
-                </div>
-
-                <a href="contact.html" class="btn btn-primary">
-                    <span>Lancer un projet</span>
-                    <span class="btn-fill-line"></span>
-                </a>
-            </div>
-        </section>
-
     </main>
 
     <div data-include="partials/footer.html"></div>
@@ -259,6 +240,27 @@
         reveals.forEach((el) => observer.observe(el));
     });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const updateTopState = () => {
+        document.body.classList.toggle("is-at-top", window.scrollY <= 10);
+    };
+
+    updateTopState();
+    window.addEventListener("scroll", updateTopState, { passive: true });
+
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const opened = nav.classList.toggle("is-open");
+            toggle.classList.toggle("is-open", opened);
+            toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+        });
+    }
+});
+</script>
 
 </body>
 </html>

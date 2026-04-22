@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Services — Impec Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Découvrez les services d’Impec Studio : identité visuelle, visuels et design, communication digitale."
+    >
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="services">
+
+    <div data-include="partials/header.html"></div>
+
+    <main class="services-page">
+
+        <section class="page-hero page-hero-small services-page-hero">
+            <div class="container">
+                <img src="assets/img/mesprestations.png" alt="Services" class="titre-img-projets">
+            </div>
+        </section>
+
+        <section class="section services-page-section">
+            <div class="container">
+                <div class="service-row service-row-normal">
+                    <div class="service-row-text">
+                        <div class="service-page-line"></div>
+                        <h2>Identité de marque et visuelle</h2>
+                        <p>
+                            Que vous partiez de zéro ou que vous souhaitiez rafraîchir votre identité visuelle actuelle, 
+                            nous vous aidons à construire des identités visuelles fortes et flexibles, 
+                            de la conception de logos à l’adaptation sur tout type de supports.
+                        </p>
+                        <div class="service-inline-buttons">
+                            <button class="btn btn-hero small-btn">
+                                <span>✓ Discussion et orientation du projet</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+
+                            <button class="btn btn-hero small-btn">
+                                <span>✓ Création du logo et déclinaisons</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+
+                            <button class="btn btn-hero small-btn">
+                                <span>✓ Système d’identité visuelle et adaptation sur supports</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-row-media">
+                        <img src="assets/img/service3.jpeg" alt="Identité visuelle">
+                    </div>
+                </div>
+
+                <div class="service-row service-row-reverse">
+                    <div class="service-row-text">
+                        <div class="service-page-line"></div>
+                        <h2>Graphisme personnalisé</h2>
+                        <p>
+                            Démarquez-vous et renforcez votre engagement sur toutes les plateformes grâce à des visuels captivants : 
+                            pour vos événements, campagnes, présentations, sponsoring ou autre…
+                        </p>
+                        <div class="service-inline-buttons">
+                            <button class="btn btn-hero small-btn">
+                                <span>✓ Création d’affiches pour événements</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+
+                            <button class="btn btn-hero small-btn">
+                                <span>✓Adaptation print et supports de communication</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+
+                            <button class="btn btn-hero small-btn">
+                                <span>✓ Conception de dossiers de sponsoring</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-row-media">
+                        <img src="assets/img/service2.jpeg" alt="Visuels et design">
+                    </div>
+                </div>
+
+                <div class="service-row service-row-normal">
+                    <div class="service-row-text">
+                        <div class="service-page-line"></div>
+                        <h2>Communication Digitale</h2>
+                        <p>
+                            Une stratégie et des contenus pour développer votre visibilité afin d’atteindre vos objectifs, 
+                            gagner en visibilité, engager votre audience et renforcer votre image.
+                        </p>
+                        <div class="service-inline-buttons">
+                            <button class="btn btn-hero small-btn">
+                                <span>✓ Animation et gestion des réseaux sociaux</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+
+                            <button class="btn btn-hero small-btn">
+                                <span>✓ Création de templates adaptés à votre utilisation</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+
+                            <button class="btn btn-hero small-btn">
+                                <span>✓ Développement de communauté</span>
+                                <span class="btn-fill-line"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-row-media">
+                        <img src="assets/img/service1.jpeg" alt="Communication digitale">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-box cta-box-split">
+                    <div class="cta-box-text">
+                        <p class="section-label">Démarquez-vous de la concurrence</p>
+                        <h2>Travaillons ensemble</h2>
+                        <p>
+                            En collaborant avec nous, notre équipe de conception sportive de haut niveau vous aidera à
+                            transformer vos aspirations créatives en résultats révolutionnaires et à positionner votre
+                            marque comme une référence dans le secteur.
+                        </p>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            <span>On en discute ?</span>
+                            <span class="btn-fill-line"></span>
+                        </a>
+                    </div>
+
+                    <div class="cta-box-visual">
+                        <img src="assets/img/service2.jpeg" alt="Impec Studio services">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+
+    <script src="assets/js/includes.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const updateTopState = () => {
+            document.body.classList.toggle("is-at-top", window.scrollY <= 10);
+        };
+
+        updateTopState();
+        window.addEventListener("scroll", updateTopState, { passive: true });
+
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".site-nav");
+
+        if (toggle && nav) {
+            toggle.addEventListener("click", () => {
+                const opened = nav.classList.toggle("is-open");
+                toggle.classList.toggle("is-open", opened);
+                toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+            });
+        }
+    });
+    </script>
+</body>
+</html>

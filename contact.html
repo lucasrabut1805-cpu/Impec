@@ -91,5 +91,26 @@
     <div data-include="partials/footer.html"></div>
 
     <script src="assets/js/includes.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const updateTopState = () => {
+        document.body.classList.toggle("is-at-top", window.scrollY <= 10);
+    };
+
+    updateTopState();
+    window.addEventListener("scroll", updateTopState, { passive: true });
+
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const opened = nav.classList.toggle("is-open");
+            toggle.classList.toggle("is-open", opened);
+            toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+        });
+    }
+});
+</script>
 </body>
 </html>

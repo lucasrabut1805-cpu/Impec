@@ -28,7 +28,19 @@
                 <div class="project2-editorial-grid">
                     <div class="project2-editorial-left reveal-on-scroll reveal-left">
                         <p class="section-label">Le projet</p>
-                        <h2>Une direction visuelle plus forte, plus lisible, plus immersive</h2>
+                        <h2>Une direction visuelle plus forte,<br>plus lisible</h2>
+
+                        <div class="project2-editorial-actions">
+                            <a href="#" class="btn">
+                                <span>Direction visuelle</span>
+                                <span class="btn-fill-line"></span>
+                            </a>
+
+                            <a href="https://www.instagram.com/impec_studio/" class="btn project2-btn-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram Impec Studio">
+                                <span>Instagram</span>
+                                <span class="btn-fill-line"></span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="project2-editorial-right reveal-on-scroll reveal-right">
@@ -192,42 +204,65 @@
                     <h2>Continuer l’exploration</h2>
                 </div>
 
-                <div class="pjbc-next-projects">
-                    <a href="projet2.html" class="pjbc-next-card reveal-on-scroll reveal-left">
-                        <img src="assets/img/heroprojet1.jpeg" alt="Projet 02">
-                        <div class="pjbc-next-content">
+                <div class="projects-grid-page projects-grid-page-2col project2-next-grid-detailed">
+                    <a href="projet1.html" class="project-card-page project-card-page-detailed reveal-on-scroll reveal-left">
+                        <div class="project-card-page-media">
+                            <img src="assets/img/heroprojet1.jpeg" alt="Projet 01">
+                        </div>
+                        <div class="project-card-content project-card-content-visible">
+                            <h3>PJBC — Identité visuelle et communication club</h3>
+                            <p>
+                                Création d’une direction visuelle plus forte et immersive pour accompagner la communication du club sur différents supports.
+                            </p>
+                            <div class="project-inline-buttons">
+                                <button class="btn btn-hero small-btn">
+                                    <span>Direction artistique</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+
+                                <button class="btn btn-hero small-btn">
+                                    <span>Conception graphique</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+
+                                <button class="btn btn-hero small-btn">
+                                    <span>Réseaux sociaux</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+                            </div>
                         </div>
                     </a>
 
-                    <a href="projet3.html" class="pjbc-next-card reveal-on-scroll reveal-right">
-                        <img src="assets/img/heroprojet2.jpeg" alt="Projet 03">
-                        <div class="pjbc-next-content">
+                    <a href="projet3.html" class="project-card-page project-card-page-detailed reveal-on-scroll reveal-right">
+                        <div class="project-card-page-media">
+                            <img src="assets/img/heroprojet2.jpeg" alt="Projet 03">
+                        </div>
+                        <div class="project-card-content project-card-content-visible">
+                            <h3>Courses de Côte — Visuels et campagne</h3>
+                            <p>
+                                Développement d’une communication visuelle impactante pour renforcer la visibilité de l’événement et harmoniser les supports.
+                            </p>
+                            <div class="project-inline-buttons">
+                                <button class="btn btn-hero small-btn">
+                                    <span>Visuels événementiels</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+
+                                <button class="btn btn-hero small-btn">
+                                    <span>Communication</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+
+                                <button class="btn btn-hero small-btn">
+                                    <span>Réseaux sociaux</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+                            </div>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
-
-
-        <!-- CTA -->
-        <section class="section project2-cta-section">
-            <div class="container cta-box reveal-on-scroll reveal-bottom">
-                <div>
-                    <p class="section-label">Contact</p>
-                    <h2>Tu veux une identité visuelle qui marque vraiment ?</h2>
-                    <p>
-                        On peut construire ensemble un univers graphique cohérent,
-                        impactant et pensé pour ton projet.
-                    </p>
-                </div>
-
-                <a href="contact.html" class="btn btn-primary">
-                    <span>Lancer un projet</span>
-                    <span class="btn-fill-line"></span>
-                </a>
-            </div>
-        </section>
-
     </main>
 
     <div data-include="partials/footer.html"></div>
@@ -310,6 +345,27 @@
         window.addEventListener("resize", updateHorizontalScroll);
     });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const updateTopState = () => {
+        document.body.classList.toggle("is-at-top", window.scrollY <= 10);
+    };
+
+    updateTopState();
+    window.addEventListener("scroll", updateTopState, { passive: true });
+
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const opened = nav.classList.toggle("is-open");
+            toggle.classList.toggle("is-open", opened);
+            toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+        });
+    }
+});
+</script>
 
 </body>
 </html>
