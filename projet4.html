@@ -2,59 +2,73 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>PJBC — Impec Studio V4</title>
+    <title>Projet 02 — Impec Studio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Découvre le projet 02 d’Impec Studio avec une présentation immersive, une narration visuelle horizontale et une galerie complète."
+    >
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body data-page="projets">
 
     <div data-include="partials/header.html"></div>
 
-    <main class="v4-page">
+    <main class="project2-page">
 
-        <section class="v4-hero">
-            <img src="assets/img/v4.jpg" alt="Hero créatif V4" class="v4-hero-image reveal-on-scroll">
-
-            <div class="v4-hero-overlay">
-                <div class="v4-container">
-                    <div class="v4-hero-copy reveal-on-scroll">
-                        <p class="v4-kicker">Impec Studio / Case Study</p>
-                        <h1>Une vision sportive<br>plus éditoriale</h1>
-                        <p>
-                            Une page projet pensée comme une expérience visuelle :
-                            moins classique, plus cinématographique, plus marquante.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <!-- HERO -->
+        <section class="project2-hero">
+            <img src="assets/img/heroprojet1.jpeg" alt="Hero du projet 02" class="project2-hero-image">
+            <div class="project2-hero-fade"></div>
         </section>
 
-        <section class="v4-overview">
-            <div class="v4-container">
-                <div class="v4-overview-grid">
-                    <div class="v4-overview-left reveal-on-scroll">
-                        <p class="v4-label">Overview</p>
-                        <h2>PJBC — identité, intensité, cohérence</h2>
+        <!-- INTRO -->
+        <section class="section project2-editorial">
+            <div class="container">
+                <div class="project2-editorial-grid">
+                    <div class="project2-editorial-left reveal-on-scroll reveal-left">
+                        <p class="section-label">Le projet</p>
+                        <h2>Une direction visuelle plus forte,<br>plus lisible</h2>
+
+                        <div class="project2-editorial-actions">
+                            <a href="#" class="btn">
+                                <span>Direction visuelle</span>
+                                <span class="btn-fill-line"></span>
+                            </a>
+
+                            <a href="https://www.instagram.com/impec_studio/" class="btn project2-btn-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram Impec Studio">
+                                <span>Instagram</span>
+                                <span class="btn-fill-line"></span>
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="v4-overview-right reveal-on-scroll">
+                    <div class="project2-editorial-right reveal-on-scroll reveal-right">
                         <p>
-                            Cette version met davantage l’accent sur la mise en scène du projet,
-                            avec une narration plus visuelle et une structure plus premium.
+                            Pour ce projet, l’objectif était de construire une identité visuelle capable
+                            d’exister sur plusieurs supports tout en gardant une vraie cohérence :
+                            affiches, réseaux sociaux, stories, visuels d’événements et communication globale.
                         </p>
 
-                        <div class="v4-meta">
-                            <div class="v4-meta-card reveal-on-scroll">
+                        <p>
+                            Le travail a été pensé pour renforcer l’image du projet, moderniser sa présence
+                            visuelle et créer des compositions capables d’attirer l’œil immédiatement.
+                        </p>
+
+                        <div class="project2-meta-row">
+                            <div class="project2-meta-item glass-card reveal-on-scroll reveal-bottom">
                                 <span>Client</span>
                                 <strong>PJBC</strong>
                             </div>
-                            <div class="v4-meta-card reveal-on-scroll">
+
+                            <div class="project2-meta-item glass-card reveal-on-scroll reveal-bottom" data-reveal-delay="100">
                                 <span>Année</span>
-                                <strong>2025</strong>
+                                <strong>2025–2026</strong>
                             </div>
-                            <div class="v4-meta-card reveal-on-scroll">
-                                <span>Scope</span>
-                                <strong>Branding visuel</strong>
+
+                            <div class="project2-meta-item glass-card reveal-on-scroll reveal-bottom" data-reveal-delay="200">
+                                <span>Mission</span>
+                                <strong>Direction visuelle</strong>
                             </div>
                         </div>
                     </div>
@@ -62,103 +76,203 @@
             </div>
         </section>
 
-        <section class="v4-panels">
-            <div class="v4-container-wide">
-                <div class="v4-panel-grid">
-                    <div class="v4-panel v4-panel-large reveal-on-scroll">
-                        <img src="assets/img/projet1.jpeg" alt="Projet principal">
-                    </div>
+        <!-- VISUEL HORIZONTAL SIMPLE -->
+        <section class="project3-banner-section" data-horizontal-section>
+            <div class="project3-banner-sticky">
+                <div class="project3-banner-track" data-horizontal-track>
+                    <article class="project3-banner-slide">
+                        <img
+                            src="assets/img/banniere2,5.jpeg"
+                            alt="Bannière panoramique du projet 3"
+                            class="project3-banner-image"
+                        >
+                    </article>
+                </div>
 
-                    <div class="v4-panel reveal-on-scroll">
-                        <img src="assets/img/img1.jpg" alt="Visuel 1">
-                    </div>
+                <div class="project3-progress">
+                    <span class="project3-progress-bar"></span>
+                </div>
+            </div>
+        </section>
 
-                    <div class="v4-panel reveal-on-scroll">
-                        <img src="assets/img/img2.jpg" alt="Visuel 2">
-                    </div>
+        <!-- GALERIE -->
+        <section class="project2-strip">
+            <div class="container-wide">
+                <div class="project2-strip-wrap">
+                    <div class="project2-strip-track">
+                        <article class="project2-strip-item"><img src="assets/img/SF2.png" alt="Galerie 1"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im1projet1.jpg" alt="Galerie 2"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im2projet1.jpg" alt="Galerie 3"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im3projet1.jpg" alt="Galerie 4"></article>
+                        <article class="project2-strip-item"><img src="assets/img/COUPESM.png" alt="Galerie 5"></article>
+                        <article class="project2-strip-item"><img src="assets/img/CoupeSM3.png" alt="Galerie 6"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im4projet1.jpg" alt="Galerie 7"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im5projet1.jpg" alt="Galerie 8"></article>
 
-                    <div class="v4-panel reveal-on-scroll">
-                        <img src="assets/img/img1.jpg" alt="Visuel 3">
-                    </div>
-
-                    <div class="v4-panel reveal-on-scroll">
-                        <img src="assets/img/img2.jpg" alt="Visuel 4">
+                        <article class="project2-strip-item"><img src="assets/img/SF2.png" alt="Galerie 9"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im1projet1.jpg" alt="Galerie 10"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im2projet1.jpg" alt="Galerie 11"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im3projet1.jpg" alt="Galerie 12"></article>
+                        <article class="project2-strip-item"><img src="assets/img/COUPESM.png" alt="Galerie 13"></article>
+                        <article class="project2-strip-item"><img src="assets/img/CoupeSM3.png" alt="Galerie 14"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im4projet1.jpg" alt="Galerie 15"></article>
+                        <article class="project2-strip-item"><img src="assets/img/im5projet1.jpg" alt="Galerie 16"></article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="v4-sequence">
-            <div class="v4-container">
-                <div class="v4-sequence-heading reveal-on-scroll">
-                    <p class="v4-label">Sequence</p>
-                    <h2>Une page pensée comme un rythme visuel</h2>
+        <!-- AUTRES PROJETS -->
+        <section class="section other-projects">
+            <div class="container">
+                <div class="section-heading reveal-on-scroll reveal-left">
+                    <p class="section-label">Autres projets</p>
+                    <h2>Continuer l’exploration</h2>
                 </div>
 
-                <div class="v4-sequence-list">
-                    <article class="v4-sequence-item reveal-on-scroll">
-                        <span>01</span>
-                        <div>
-                            <h3>Un hero plus marquant</h3>
-                            <p>Un visuel fort dès l’entrée, avec une sensation plus éditoriale et plus mode.</p>
+                <div class="projects-grid-page projects-grid-page-2col project2-next-grid-detailed">
+                    <a href="projet1.html" class="project-card-page project-card-page-detailed reveal-on-scroll reveal-left">
+                        <div class="project-card-page-media">
+                            <img src="assets/img/heroprojet1.jpeg" alt="Projet 01">
                         </div>
-                    </article>
+                        <div class="project-card-content project-card-content-visible">
+                            <h3>PJBC — Identité visuelle et communication club</h3>
+                            <p>
+                                Création d’une direction visuelle plus forte et immersive pour accompagner la communication du club sur différents supports.
+                            </p>
+                            <div class="project-inline-buttons">
+                                <button class="btn btn-hero small-btn">
+                                    <span>Direction artistique</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
 
-                    <article class="v4-sequence-item reveal-on-scroll">
-                        <span>02</span>
-                        <div>
-                            <h3>Des images mieux mises en scène</h3>
-                            <p>Les visuels deviennent des éléments narratifs et non plus seulement une galerie.</p>
-                        </div>
-                    </article>
+                                <button class="btn btn-hero small-btn">
+                                    <span>Conception graphique</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
 
-                    <article class="v4-sequence-item reveal-on-scroll">
-                        <span>03</span>
-                        <div>
-                            <h3>Un ADN plus premium</h3>
-                            <p>Le site reste sombre et impactant, mais gagne en style et en respiration.</p>
+                                <button class="btn btn-hero small-btn">
+                                    <span>Réseaux sociaux</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+                            </div>
                         </div>
-                    </article>
+                    </a>
+
+                    <a href="projet3.html" class="project-card-page project-card-page-detailed reveal-on-scroll reveal-right">
+                        <div class="project-card-page-media">
+                            <img src="assets/img/heroprojet2.jpeg" alt="Projet 03">
+                        </div>
+                        <div class="project-card-content project-card-content-visible">
+                            <h3>Courses de Côte — Visuels et campagne</h3>
+                            <p>
+                                Développement d’une communication visuelle impactante pour renforcer la visibilité de l’événement et harmoniser les supports.
+                            </p>
+                            <div class="project-inline-buttons">
+                                <button class="btn btn-hero small-btn">
+                                    <span>Visuels événementiels</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+
+                                <button class="btn btn-hero small-btn">
+                                    <span>Communication</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+
+                                <button class="btn btn-hero small-btn">
+                                    <span>Réseaux sociaux</span>
+                                    <span class="btn-fill-line"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
-
-        <section class="v4-final-cta">
-            <div class="v4-container">
-                <div class="v4-final-box reveal-on-scroll">
-                    <p class="v4-label">Contact</p>
-                    <h2>Construire un projet qui se distingue</h2>
-                    <p>
-                        Une direction visuelle forte ne sert pas juste à embellir :
-                        elle rend ton univers plus identifiable et plus mémorable.
-                    </p>
-                    <a href="contact.html" class="v4-btn">Discuter du projet</a>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <script src="assets/js/includes.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const reveals = document.querySelectorAll(".reveal-on-scroll");
+    <div data-include="partials/footer.html"></div>
 
-        const observer = new IntersectionObserver((entries) => {
+    <script src="assets/js/includes.js"></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector(".project3-banner-section");
+    const track = document.querySelector(".project3-banner-track");
+    const progressBar = document.querySelector(".project3-progress-bar");
+    const revealItems = Array.from(document.querySelectorAll(".reveal-on-scroll"));
+
+    /* ---------------------------------
+    REVEAL ON SCROLL
+    --------------------------------- */
+    if ("IntersectionObserver" in window && revealItems.length) {
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
+                const el = entry.target;
+                const delay = el.dataset.revealDelay || "0";
+
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("is-visible");
+                    el.style.transitionDelay = `${delay}ms`;
+                    el.classList.add("is-visible");
                 } else {
-                    entry.target.classList.remove("is-visible");
+                    el.classList.remove("is-visible");
+                    el.style.transitionDelay = "0ms";
                 }
             });
         }, {
-            threshold: 0.16
+            threshold: 0.18,
+            rootMargin: "0px 0px -8% 0px"
         });
 
-        reveals.forEach((el) => observer.observe(el));
-    });
-    </script>
+        revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+
+    if (!section || !track || !progressBar) return;
+
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+    const updateHorizontalScroll = () => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const viewportH = window.innerHeight;
+        const maxScroll = Math.max(sectionHeight - viewportH, 1);
+
+        const current = clamp(window.scrollY - sectionTop, 0, maxScroll);
+        const maxTranslate = Math.max(track.scrollWidth - window.innerWidth, 0);
+        const progress = current / maxScroll;
+
+        track.style.transform = `translateX(-${progress * maxTranslate}px)`;
+        progressBar.style.width = `${progress * 100}%`;
+    };
+
+    updateHorizontalScroll();
+    window.addEventListener("scroll", updateHorizontalScroll, { passive: true });
+    window.addEventListener("resize", updateHorizontalScroll);
+});
+</script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const updateTopState = () => {
+        document.body.classList.toggle("is-at-top", window.scrollY <= 10);
+    };
+
+    updateTopState();
+    window.addEventListener("scroll", updateTopState, { passive: true });
+
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+            const opened = nav.classList.toggle("is-open");
+            toggle.classList.toggle("is-open", opened);
+            toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+        });
+    }
+});
+</script>
 
 </body>
 </html>

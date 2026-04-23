@@ -3344,10 +3344,14 @@ body:not(.is-at-top) .site-header.is-top-only {
     width: 0%;
     height: 100%;
     border-radius: inherit;
-    background: linear-gradient(
-        90deg,
-        rgba(255,255,255,0.35),
-        rgba(255,255,255,0.95)
+    background:
+    linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 163, 163, 0.7) 20%,
+        rgba(255, 99, 99, 0.45) 50%,
+        rgba(255, 51, 51, 0.7) 80%,
+        rgb(255, 38, 38) 100%
     );
     box-shadow: 0 0 12px rgba(255,255,255,0.18);
 }
