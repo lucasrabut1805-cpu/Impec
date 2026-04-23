@@ -3297,6 +3297,7 @@ body:not(.is-at-top) .site-header.is-top-only {
     padding-top: var(--header-height);
     background: #030407;
     overflow: hidden;
+    margin-top: -68px;
 }
 
 .project3-hero-image {
@@ -3430,7 +3431,7 @@ body:not(.is-at-top) .site-header.is-top-only {
 /* BANNIÈRE HORIZONTALE */
 .project3-banner-section {
     position: relative;
-    min-height: 360vh;
+    min-height: 320vh;
     background: transparent;
 }
 
@@ -3441,13 +3442,12 @@ body:not(.is-at-top) .site-header.is-top-only {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .project3-banner-track {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     width: max-content;
     padding: 0;
     will-change: transform;
@@ -6224,66 +6224,6 @@ body:not(.is-at-top) .site-header.is-top-only {
         filter: none !important;
     }
 }
-
-@media (max-width: 1024px) {
-    .project3-banner-section {
-        min-height: 260vh;
-    }
-
-    .project3-banner-sticky {
-        top: calc(var(--header-height) + 10px);
-        height: calc(100vh - var(--header-height) - 18px);
-    }
-
-    .project3-banner-track {
-        padding: 0 4vw;
-    }
-
-    .project3-banner-image {
-        height: min(72vh, 620px);
-        border-radius: 20px;
-    }
-
-    .project3-progress {
-        width: min(56vw, 420px);
-    }
-}
-
-@media (max-width: 820px) {
-    .project3-banner-section {
-        min-height: auto;
-        padding-top: 30px;
-    }
-
-    .project3-banner-sticky {
-        position: relative;
-        top: auto;
-        height: auto;
-        overflow: visible;
-    }
-
-    .project3-banner-track {
-        width: 100%;
-        padding: 0;
-        transform: none !important;
-    }
-
-    .project3-banner-slide {
-        width: 100%;
-    }
-
-    .project3-banner-image {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        border-radius: 16px;
-    }
-
-    .project3-progress {
-        display: none;
-    }
-}
-
 @media (max-width: 1280px) {
     .project3-editorial {
         padding-top: 64px;
@@ -6316,6 +6256,36 @@ body:not(.is-at-top) .site-header.is-top-only {
     .project3-meta-item {
         padding: 1rem 0.9rem;
     }
+
+    .project3-banner-section {
+        min-height: 280vh;
+    }
+
+    .project3-banner-sticky {
+        top: calc(var(--header-height) + 12px);
+        height: calc(100vh - var(--header-height) - 20px);
+    }
+
+    .project3-banner-image {
+        height: calc(100vh - var(--header-height) - 20px);
+    }
+
+    .project3-progress {
+        width: min(52vw, 560px);
+    }
+
+    .project3-strip {
+        padding: 7rem 0 0;
+        margin-top: -20px;
+    }
+
+    .project3-strip-item {
+        flex: 0 0 230px;
+    }
+
+    .project3-strip-item img {
+        height: 285px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -6338,7 +6308,7 @@ body:not(.is-at-top) .site-header.is-top-only {
     }
 
     .project3-banner-section {
-        min-height: 280vh;
+        min-height: 240vh;
     }
 
     .project3-banner-sticky {
@@ -6351,7 +6321,7 @@ body:not(.is-at-top) .site-header.is-top-only {
     }
 
     .project3-progress {
-        width: min(56vw, 420px);
+        width: min(54vw, 520px);
     }
 
     .project3-strip {
@@ -6383,23 +6353,39 @@ body:not(.is-at-top) .site-header.is-top-only {
         position: relative;
         top: auto;
         height: auto;
-        overflow: visible;
+        overflow: hidden;
+        display: block;
     }
 
     .project3-banner-track {
+        display: flex;
         width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 0;
         padding: 0;
         transform: none !important;
+        scrollbar-width: none;
+    }
+
+    .project3-banner-track::-webkit-scrollbar {
+        display: none;
     }
 
     .project3-banner-slide {
+        flex: 0 0 100%;
         width: 100%;
+        scroll-snap-align: center;
+        justify-content: center;
     }
 
     .project3-banner-image {
         width: 100%;
         height: auto;
         max-width: 100%;
+        object-fit: contain;
     }
 
     .project3-progress {
@@ -6412,5 +6398,15 @@ body:not(.is-at-top) .site-header.is-top-only {
 
     .project3-strip-item img {
         height: 220px;
+    }
+}
+
+@media (max-width: 640px) {
+    .project3-strip-item {
+        flex: 0 0 160px;
+    }
+
+    .project3-strip-item img {
+        height: 200px;
     }
 }

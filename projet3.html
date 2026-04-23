@@ -18,7 +18,7 @@
 
         <!-- HERO -->
         <section class="project3-hero">
-            <img src="assets/img/heroprojet2.jpeg" alt="Hero du projet 03" class="project3-hero-image">
+            <img src="assets/img/heroprojet3.jpeg" alt="Hero du projet 03" class="project3-hero-image">
             <div class="project3-hero-fade"></div>
         </section>
 
@@ -59,17 +59,17 @@
                         <div class="project3-meta-row">
                             <div class="project3-meta-item glass-card reveal-on-scroll reveal-bottom">
                                 <span>Client</span>
-                                <strong>Courses de Côte</strong>
+                                <strong>Isidor Studio</strong>
                             </div>
 
                             <div class="project3-meta-item glass-card reveal-on-scroll reveal-bottom" data-reveal-delay="100">
                                 <span>Année</span>
-                                <strong>2025–2026</strong>
+                                <strong>2026</strong>
                             </div>
 
                             <div class="project3-meta-item glass-card reveal-on-scroll reveal-bottom" data-reveal-delay="200">
                                 <span>Mission</span>
-                                <strong>Communication visuelle</strong>
+                                <strong>Communication</strong>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                 <div class="project3-banner-track" data-horizontal-track>
                     <article class="project3-banner-slide">
                         <img
-                            src="assets/img/banniere2.png"
+                            src="assets/img/banniere3.png"
                             alt="Bannière panoramique du projet 03"
                             class="project3-banner-image"
                         >
@@ -101,15 +101,14 @@
             <div class="container-wide">
                 <div class="project3-strip-wrap">
                     <div class="project3-strip-track">
-                        <article class="project3-strip-item"><img src="assets/img/heroprojet2.jpeg" alt="Galerie 1"></article>
-                        <article class="project3-strip-item"><img src="assets/img/banniere2.png" alt="Galerie 2"></article>
-                        <article class="project3-strip-item"><img src="assets/img/heroprojet2.jpeg" alt="Galerie 3"></article>
-                        <article class="project3-strip-item"><img src="assets/img/banniere2.png" alt="Galerie 4"></article>
-
-                        <article class="project3-strip-item"><img src="assets/img/heroprojet2.jpeg" alt="Galerie 5"></article>
-                        <article class="project3-strip-item"><img src="assets/img/banniere2.png" alt="Galerie 6"></article>
-                        <article class="project3-strip-item"><img src="assets/img/heroprojet2.jpeg" alt="Galerie 7"></article>
-                        <article class="project3-strip-item"><img src="assets/img/banniere2.png" alt="Galerie 8"></article>
+                        <article class="project3-strip-item"><img src="assets/img/ANDREW ALBICY.png" alt="Galerie 1"></article>
+                        <article class="project3-strip-item"><img src="assets/img/EVAN FOURNIER.png" alt="Galerie 2"></article>
+                        <article class="project3-strip-item"><img src="assets/img/JONES.png" alt="Galerie 3"></article>
+                        <article class="project3-strip-item"><img src="assets/img/KAM.png" alt="Galerie 4"></article>
+                        <article class="project3-strip-item"><img src="assets/img/MBAYE NDIAYE.png" alt="Galerie 5"></article>
+                        <article class="project3-strip-item"><img src="assets/img/NOA ESSENGUE.png" alt="Galerie 6"></article>
+                        <article class="project3-strip-item"><img src="assets/img/TREVOR HUDGINS.png" alt="Galerie 7"></article>
+                        <article class="project3-strip-item"><img src="assets/img/XRM.png" alt="Galerie 8"></article>
                     </div>
                 </div>
             </div>
@@ -189,59 +188,73 @@
     <script src="assets/js/includes.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const section = document.querySelector(".project3-banner-section");
-        const track = document.querySelector(".project3-banner-track");
-        const progressBar = document.querySelector(".project3-progress-bar");
-        const revealItems = Array.from(document.querySelectorAll(".reveal-on-scroll"));
+document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector(".project3-banner-section");
+    const track = document.querySelector(".project3-banner-track");
+    const slide = document.querySelector(".project3-banner-slide");
+    const progressBar = document.querySelector(".project3-progress-bar");
+    const revealItems = Array.from(document.querySelectorAll(".reveal-on-scroll"));
 
-        if ("IntersectionObserver" in window && revealItems.length) {
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    const el = entry.target;
-                    const delay = el.dataset.revealDelay || "0";
+    if ("IntersectionObserver" in window && revealItems.length) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const el = entry.target;
+                const delay = el.dataset.revealDelay || "0";
 
-                    if (entry.isIntersecting) {
-                        el.style.transitionDelay = `${delay}ms`;
-                        el.classList.add("is-visible");
-                    } else {
-                        el.classList.remove("is-visible");
-                        el.style.transitionDelay = "0ms";
-                    }
-                });
-            }, {
-                threshold: 0.18,
-                rootMargin: "0px 0px -8% 0px"
+                if (entry.isIntersecting) {
+                    el.style.transitionDelay = `${delay}ms`;
+                    el.classList.add("is-visible");
+                } else {
+                    el.classList.remove("is-visible");
+                    el.style.transitionDelay = "0ms";
+                }
             });
+        }, {
+            threshold: 0.18,
+            rootMargin: "0px 0px -8% 0px"
+        });
 
-            revealItems.forEach((item) => revealObserver.observe(item));
-        } else {
-            revealItems.forEach((item) => item.classList.add("is-visible"));
+        revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+
+    if (!section || !track || !slide || !progressBar) return;
+
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+    const updateHorizontalScroll = () => {
+        if (window.innerWidth <= 820) {
+            track.style.transform = "none";
+            progressBar.style.width = "0%";
+            return;
         }
 
-        if (!section || !track || !progressBar) return;
+        const slideWidth = slide.offsetWidth;
+        const viewportWidth = window.innerWidth;
+        const sideOffset = Math.max((viewportWidth - slideWidth) / 2, 0);
 
-        const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+        track.style.paddingLeft = `${sideOffset}px`;
+        track.style.paddingRight = `${sideOffset}px`;
 
-        const updateHorizontalScroll = () => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const viewportH = window.innerHeight;
-            const maxScroll = Math.max(sectionHeight - viewportH, 1);
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const viewportH = window.innerHeight;
+        const maxScroll = Math.max(sectionHeight - viewportH, 1);
 
-            const current = clamp(window.scrollY - sectionTop, 0, maxScroll);
-            const maxTranslate = Math.max(track.scrollWidth - window.innerWidth, 0);
-            const progress = current / maxScroll;
+        const current = clamp(window.scrollY - sectionTop, 0, maxScroll);
+        const maxTranslate = Math.max(track.scrollWidth - viewportWidth, 0);
+        const progress = current / maxScroll;
 
-            track.style.transform = `translateX(-${progress * maxTranslate}px)`;
-            progressBar.style.width = `${progress * 100}%`;
-        };
+        track.style.transform = `translateX(-${progress * maxTranslate}px)`;
+        progressBar.style.width = `${progress * 100}%`;
+    };
 
-        updateHorizontalScroll();
-        window.addEventListener("scroll", updateHorizontalScroll, { passive: true });
-        window.addEventListener("resize", updateHorizontalScroll);
-    });
-    </script>
+    updateHorizontalScroll();
+    window.addEventListener("scroll", updateHorizontalScroll, { passive: true });
+    window.addEventListener("resize", updateHorizontalScroll);
+});
+</script>
 
     <script>
     document.addEventListener("DOMContentLoaded", () => {
