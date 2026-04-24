@@ -238,22 +238,16 @@
                     <input type="radio" name="project-slider" id="project-3">
 
                     <div class="projects-stage">
-                        <label for="project-1" class="project-card-stack card-1">
+                        <label for="project-1" class="project-card-stack card-1" data-link="projet1.html">
                             <img src="assets/img/heroprojet1.jpeg" alt="Projet 01">
-                            <div class="project-overlay">
-                            </div>
                         </label>
 
-                        <label for="project-2" class="project-card-stack card-2">
+                        <label for="project-2" class="project-card-stack card-2" data-link="projet2.html">
                             <img src="assets/img/heroprojet2.jpeg" alt="Projet 02">
-                            <div class="project-overlay">
-                            </div>
                         </label>
 
-                        <label for="project-3" class="project-card-stack card-3">
+                        <label for="project-3" class="project-card-stack card-3" data-link="projet3.html">
                             <img src="assets/img/heroprojet3.jpeg" alt="Projet 03">
-                            <div class="project-overlay">
-                            </div>
                         </label>
                     </div>
                 </div>
@@ -354,6 +348,23 @@ document.addEventListener("DOMContentLoaded", () => {
             toggle.setAttribute("aria-expanded", opened ? "true" : "false");
         });
     }
+});
+</script>
+<script>
+document.querySelectorAll('.project-card-stack').forEach(card => {
+    card.addEventListener('click', function(e) {
+
+        const radioId = this.getAttribute('for');
+        const radio = document.getElementById(radioId);
+
+        // Si déjà sélectionné = ouvrir le projet
+        if (radio.checked) {
+            const link = this.dataset.link;
+            window.location.href = link;
+        }
+
+        // Sinon → juste sélectionner (slider)
+    });
 });
 </script>
 </body>
