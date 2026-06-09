@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteNav = document.querySelector(".site-nav");
+
+    if (menuToggle && siteNav) {
+        menuToggle.addEventListener("click", () => {
+            siteNav.classList.toggle("is-open");
+        });
+    }
+
     setTimeout(() => {
         const currentPage = document.body.dataset.page;
         const navLinks = document.querySelectorAll(".nav-list a");
