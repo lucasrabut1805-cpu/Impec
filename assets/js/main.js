@@ -206,41 +206,30 @@ function initRandomProjects() {
     randomProjectsContainer.dataset.randomBound = "true";
 
     const projects = [
-        {
-            url: "projet1.html",
-            title: "PJBC — Identité visuelle et communication club",
-            image: "assets/img/heroprojet1.jpeg",
-            text: "Création d’une direction visuelle plus forte et immersive pour accompagner la communication du club sur différents supports.",
-            tags: ["Direction artistique", "Conception graphique", "Réseaux sociaux"]
-        },
-        {
-            url: "projet2.html",
-            title: "Course de Côte — Direction visuelle",
-            image: "assets/img/heroprojet2.jpeg",
-            text: "Une approche plus éditoriale et immersive pour structurer la communication sur plusieurs supports.",
-            tags: ["Direction visuelle", "Affiches", "Social media"]
-        },
-        {
-            url: "projet3.html",
-            title: "Isidor — Design de communication",
-            image: "assets/img/heroprojet3.jpeg",
-            text: "Conception d’un univers graphique clair et cohérent, pensé pour valoriser le projet sur plusieurs formats.",
-            tags: ["Campagne visuelle", "Communication", "Supports événementiels"]
-        },
-        {
-            url: "projet4.html",
-            title: "Impec Studio — Identité visuelle et communication",
-            image: "assets/img/heroprojet4.jpeg",
-            text: "Travail graphique pensé pour rendre la communication plus lisible, plus moderne et plus marquante.",
-            tags: ["Direction visuelle", "Supports print", "Réseaux sociaux"]
-        },
-        {
-            url: "projet5.html",
-            title: "Peli'camp — Communication visuelle",
-            image: "assets/img/heroprojet5.jpeg",
-            text: "Travail graphique pensé pour rendre la communication plus lisible, plus moderne et plus marquante.",
-            tags: ["Direction visuelle", "Supports print", "Réseaux sociaux"]
-        }
+    {
+        url: "projet1.html",
+        title: "Pomjeannais Basket Club — Une saison, une identité",
+        image: "assets/img/heroprojet1.jpeg",
+        tags: ["Identité visuelle", "Communication digitale"]
+    },
+    {
+        url: "projet2.html",
+        title: "Course de Côte de La Pommeraye — L'image à grande vitesse",
+        image: "assets/img/heroprojet2.jpeg",
+        tags: ["Direction artistique", "Communication événementielle"]
+    },
+    {
+        url: "projet3.html",
+        title: "Isidor Studio — Une identité qui se porte",
+        image: "assets/img/heroprojet3.jpeg",
+        tags: ["Direction artistique", "Mise en valeur produit"]
+    },
+    {
+        url: "projet4.html",
+        title: "Pomjeannais Basket Club — Une finale, tout un club",
+        image: "assets/img/heroprojet4.png",
+        tags: ["Communication événementielle", "Identité visuelle"]
+    }
     ];
 
     const shuffleArray = (array) => {
@@ -264,7 +253,6 @@ function initRandomProjects() {
             </div>
             <div class="project-card-content project-card-content-visible">
                 <h3>${project.title}</h3>
-                <p>${project.text}</p>
                 <div class="project-inline-buttons">
                     ${project.tags.map((tag) => `
                         <button class="btn btn-hero small-btn" type="button">
