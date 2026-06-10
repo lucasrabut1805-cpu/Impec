@@ -53,70 +53,48 @@
         </section>
 
         <section class="section about-story">
-            <div class="container about-grid">
-                <div>
+            <div class="container about-showcase">
+                <div class="about-showcase-left">
                     <p class="section-label">Approche</p>
                     <h2>Pourquoi Impec Studio ?</h2>
-                </div>
 
-                <div class="about-text-content">
-                    <p>
-                        Impec Studio est né d'une envie simple : transformer une passion en métier.
-                        Au fil de mes expériences, notamment dans le monde sportif, 
-                        j'ai constaté l'importance d'une communication forte pour valoriser un projet, 
-                        attirer une communauté et développer sa visibilité.
-                        Mon objectif est d'aider chaque structure à raconter son histoire à travers une communication qui lui ressemble, 
-                        avec des créations à la fois modernes, cohérentes et impactantes.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section values-section">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-label">Méthode</p>
-                    <h2>Ma vision</h2>
-                </div>
-
-                <div class="values-grid">
-                    <article class="value-card">
-                        <span>01</span>
+                    <div class="about-vision-box">
                         <p>
-                            Je crois qu'une bonne communication ne se limite pas à un beau visuel.
-                            Elle doit transmettre des émotions, créer du lien et refléter l'identité de ceux qui la portent.
-                            C'est cette vision qui guide chacun des projets réalisés par Impec Studio.
+                            Impec Studio est né d'une envie simple : transformer une passion en métier.
+                            Au fil de mes expériences, notamment dans le monde sportif, j'ai constaté
+                            l'importance d'une communication forte pour valoriser un projet,
+                            attirer une communauté et développer sa visibilité.
                         </p>
-                    </article>
+                    </div>
+                </div>
 
+                <div class="about-showcase-right">
+                    <p>
+                        Mon objectif est d'aider chaque structure à raconter son histoire à travers
+                        une communication qui lui ressemble, avec des créations à la fois modernes,
+                        cohérentes et impactantes.
+                    </p>
+
+                    <div class="about-separator"></div>
+
+                    <span class="about-red-line"></span>
+
+                    <p>
+                        Je crois qu'une bonne communication ne se limite pas à un beau visuel.
+                        Elle doit transmettre des émotions, créer du lien et refléter l'identité de ceux qui la portent.
+                        C'est cette vision qui guide chacun des projets réalisés par Impec Studio.
+                    </p>
+
+                    <div class="about-method-title">
+                        <p class="section-label">Méthode</p>
+                        <h2>Ma vision</h2>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
-
     <div data-include="partials/footer.html"></div>
 
     <script src="assets/js/includes.js"></script>
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const updateTopState = () => {
-        document.body.classList.toggle("is-at-top", window.scrollY <= 10);
-    };
-
-    updateTopState();
-    window.addEventListener("scroll", updateTopState, { passive: true });
-
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".site-nav");
-
-    if (toggle && nav) {
-        toggle.addEventListener("click", () => {
-            const opened = nav.classList.toggle("is-open");
-            toggle.classList.toggle("is-open", opened);
-            toggle.setAttribute("aria-expanded", opened ? "true" : "false");
-        });
-    }
-});
-</script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

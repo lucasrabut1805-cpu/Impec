@@ -1,0 +1,248 @@
+@font-face {
+    font-family: "Tactic Sans";
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+    src: url("../fonts/TacticSans-BlkIt.otf") format("opentype");
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+@keyframes headerFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes projectHeroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(42px);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes glassSweep {
+    0% {
+        transform: translateX(-120%) rotate(8deg);
+        opacity: 0;
+    }
+    12% {
+        opacity: 1;
+    }
+    45% {
+        transform: translateX(120%) rotate(8deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateX(120%) rotate(8deg);
+        opacity: 0;
+    }
+}
+
+@keyframes btnBorderRun {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pjbcStripScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* =========================================================
+   RESET CSS
+========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+:root {
+    --color-bg: #05040a;
+    --color-bg-soft: #0b0913;
+    --color-bg-card: rgba(255, 255, 255, 0.08);
+    --color-border: rgba(255, 255, 255, 0.14);
+
+    --color-text: #ffffff;
+    --color-text-soft: rgba(255, 255, 255, 0.78);
+    --color-text-muted: rgba(255, 255, 255, 0.55);
+
+    --color-accent: #eb0707;
+    --color-accent-strong: #f11b1b;
+    --color-accent-2: #7a00ff;
+    --color-accent-3: #ff6a3d;
+
+    --glass-bg: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0.04)
+    );
+    --glass-stroke: rgba(255, 255, 255, 0.16);
+    --glass-highlight: rgba(255, 255, 255, 0.08);
+
+    --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.35);
+    --shadow-glow: 0 10px 40px rgba(255, 27, 123, 0.16);
+
+    --radius-sm: 14px;
+    --radius-md: 22px;
+    --radius-lg: 30px;
+
+    --container: 1240px;
+    --container-wide: 1650px;
+
+    --header-height: 70px;
+    --transition: 0.3s ease;
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(rgba(5, 4, 10, 0.72), rgba(5, 4, 10, 0.78)),
+        url("../img/fond-site.png") center center / cover fixed no-repeat;
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 0;
+}
+
+header {
+    animation: headerFade 0.8s ease forwards;
+}
+
+img,
+video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+.image-reveal {
+    overflow: hidden;
+}
+
+.container {
+    width: min(92%, var(--container));
+    margin: 0 auto;
+}
+
+.container-wide {
+    width: min(96%, var(--container-wide));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.hero-narrow {
+    max-width: 680px;
+}
+
+.section-label,
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 163, 163, 0.7) 20%,
+        rgba(255, 99, 99, 0.45) 50%,
+        rgba(255, 51, 51, 0.7) 80%,
+        rgb(255, 38, 38) 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    margin-bottom: 18px;
+}
+
+.section-heading {
+    max-width: 900px;
+    margin-bottom: 10px;
+    margin-left: -5px;
+}
+
+.section-heading h2,
+.page-hero h1,
+.intro-card-large h2,
+.cta-box h2,
+.about-grid h2 {
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.05;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.section-heading p,
+.page-hero p,
+.intro-card p,
+.process-card p,
+.project-card-content p,
+.contact-info-card p,
+.about-text-content p,
+.value-card p,
+.cta-box p,
+.project-text,
+.service-card-body p {
+    color: var(--color-text-soft);
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 22px;
+    color: var(--color-accent);
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,128 @@
+/* =========================================================
+   PAGE SERVICES
+========================================================= */
+.services-list-home {
+    display: grid;
+    gap: 22px;
+    margin-top: 18px;
+}
+
+.service-page-line {
+    width: 140px;
+    height: 2px;
+    background:
+    linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 163, 163, 0.7) 20%,
+        rgba(255, 99, 99, 0.45) 50%,
+        rgba(255, 51, 51, 0.7) 80%,
+        rgb(255, 38, 38) 100%
+    );
+    margin-bottom: 22px;
+}
+
+.service-inline-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.service-home-item {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 22px;
+    align-items: stretch;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.service-home-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.service-home-text {
+    padding: 30px 30px 24px;
+}
+
+.service-home-text h3 {
+    font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+.service-home-text p {
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
+}
+
+.service-home-tags {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.services-page-section .container {
+    display: grid;
+    gap: 80px;
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+    align-items: center;
+}
+
+.service-row-reverse .service-row-text {
+    order: 2;
+}
+
+.service-row-reverse .service-row-media {
+    order: 1;
+}
+
+.service-row-text h2 {
+    font-size: clamp(2.2rem, 4vw, 4.2rem);
+    line-height: 0.98;
+    margin-bottom: 18px;
+}
+
+.service-row-text p {
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
+}
+
+.service-row-tags {
+    margin-top: 16px;
+    color: rgba(255, 255, 255, 0.56);
+}
+
+.service-row-media {
+    width: 100%;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.service-row-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.service-image-branding {
+    transform: scale(1.55);
+}
+

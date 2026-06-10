@@ -11,65 +11,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                 throw new Error(`Impossible de charger ${file}`);
             }
 
-            const content = await response.text();
-            element.innerHTML = content;
+            element.innerHTML = await response.text();
         } catch (error) {
             console.error(error);
             element.innerHTML = `<p style="color:red;">Erreur de chargement : ${file}</p>`;
         }
     }
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const siteNav = document.querySelector(".site-nav");
-
-    if (menuToggle && siteNav) {
-        menuToggle.addEventListener("click", () => {
-            siteNav.classList.toggle("is-open");
-        });
-    }
-
-    setTimeout(() => {
-        const currentPage = document.body.dataset.page;
-        const navLinks = document.querySelectorAll(".nav-list a");
-
-        navLinks.forEach((link) => {
-            if (link.dataset.link === currentPage) {
-                link.classList.add("active");
-            }
-        });
-    }, 50);
-
-    if (window.AOS) {
-        AOS.init({
-            once: false,
-            mirror: true,
-            duration: 900,
-            offset: 120,
-            easing: "ease-out-cubic",
-            anchorPlacement: "top-bottom"
-        });
-
-        setTimeout(() => {
-            AOS.refreshHard();
-        }, 100);
-    }
-
-    if (window.gsap && window.SplitText) {
-        gsap.registerPlugin(SplitText);
-
-        document.querySelectorAll(".js-split-words").forEach((element, index) => {
-            const split = SplitText.create(element, {
-                type: "words"
-            });
-
-            gsap.from(split.words, {
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.out",
-                stagger: 0.06,
-                delay: 0.15 + (index * 0.12)
-            });
-        });
-    }
-})
+    document.dispatchEvent(new Event("includes:loaded"));
+});

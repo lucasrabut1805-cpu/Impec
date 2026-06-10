@@ -1,0 +1,230 @@
+
+/* =========================================================
+   COMPOSANTS GLOBAUX
+========================================================= */
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-stroke);
+    box-shadow: var(--shadow-soft), var(--shadow-glow);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.10),
+        transparent 45%
+    );
+    pointer-events: none;
+}
+
+.project-category {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-left { transform: translateX(-70px); }
+.reveal-right { transform: translateX(70px); }
+.reveal-top { transform: translateY(-70px); }
+.reveal-bottom { transform: translateY(70px); }
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* =========================================================
+   BOUTONS — BLACK LIQUID GLASS
+========================================================= */
+.btn {
+    --btn-h: 50px;
+    --btn-pad-x: 22px;
+    --ring-speed: 1.8s;
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--btn-h);
+    padding: 0 var(--btn-pad-x);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    overflow: hidden;
+    isolation: isolate;
+    cursor: pointer;
+    text-decoration: none;
+
+    color: #fff;
+    font-size: 0.98rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+
+    background:
+        radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 28%, rgba(255,255,255,0.00) 60%),
+        radial-gradient(90% 70% at 50% 100%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.00) 50%),
+        rgba(255,255,255,0.04);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.25),
+        inset 0 -6px 10px rgba(255,255,255,0.04),
+        0 6px 14px rgba(0,0,0,0.18);
+
+    transform: scale(1);
+    transition:
+        transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.32s ease,
+        border-color 0.32s ease;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    height: 52%;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+    background:
+        radial-gradient(circle at 82% 14%, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.18) 12%, rgba(255,255,255,0.00) 24%),
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.24) 0%,
+            rgba(255,255,255,0.10) 18%,
+            rgba(255,255,255,0.03) 42%,
+            rgba(255,255,255,0.00) 100%
+        );
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    bottom: 5px;
+    height: 10px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.00) 0%,
+        rgba(255,255,255,0.03) 20%,
+        rgba(255,255,255,0.08) 50%,
+        rgba(255,255,255,0.03) 80%,
+        rgba(255,255,255,0.00) 100%
+    );
+    filter: blur(7px);
+    opacity: 0.55;
+}
+
+.btn > span:first-child,
+.btn > strong,
+.btn > b {
+    position: relative;
+    z-index: 10;
+}
+
+.btn .btn-fill-line {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 4;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.btn .btn-fill-line::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    opacity: 0;
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(255,255,255,0.00) 0deg,
+            rgba(255,255,255,0.00) 292deg,
+            rgba(255,255,255,0.08) 316deg,
+            rgba(255,255,255,0.45) 332deg,
+            rgba(255,255,255,1) 344deg,
+            rgba(255,255,255,0.55) 352deg,
+            rgba(255,255,255,0.10) 357deg,
+            rgba(255,255,255,0.00) 360deg
+        );
+    filter: blur(1.2px);
+    animation: btnBorderRun var(--ring-speed) linear infinite;
+    transition: opacity 0.22s ease;
+}
+
+.btn:hover .btn-fill-line {
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.16),
+        0 0 10px rgba(255,255,255,0.08);
+}
+
+.btn .btn-fill-line::after {
+    content: "";
+    position: absolute;
+    inset: 1.5px;
+    border-radius: inherit;
+    background: linear-gradient(180deg, #18191e 0%, #06070a 52%, #000000 100%);
+    z-index: 1;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    border-color: rgba(255,255,255,0.14);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.22),
+        inset 0 -10px 16px rgba(255,255,255,0.03),
+        0 12px 20px rgba(0,0,0,0.28),
+        0 18px 34px rgba(0,0,0,0.20);
+}
+
+.btn:hover .btn-fill-line::before {
+    opacity: 1;
+}
+
+.btn:active {
+    transform: scale(1.03);
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.btn-group .btn {
+    width: 100%;
+}
+
+.small-btn {
+    height: 20px;
+    padding: 0 16px;
+    font-size: 0.8rem;
+    border-radius: 999px;
+}
+
+.small-btn span {
+    font-size: 0.8rem;
+}

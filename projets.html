@@ -50,7 +50,7 @@
                         <img src="assets/img/heroprojet2.jpeg" alt="Projet 2">
                     </div>
                     <div class="project-card-content project-card-content-visible">
-                        <h3>Course de Côte de La Pommeraye — L'image d'un événement à grande vitesse</h3>
+                        <h3>Course de Côte de La Pommeraye — L'image à grande vitesse</h3>
                         <div class="project-inline-buttons">
                             <button class="btn btn-hero small-btn">
                                 <span>Direction artistique</span>
@@ -138,26 +138,6 @@
     <div data-include="partials/footer.html"></div>
 
     <script src="assets/js/includes.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const updateTopState = () => {
-        document.body.classList.toggle("is-at-top", window.scrollY <= 10);
-    };
-
-    updateTopState();
-    window.addEventListener("scroll", updateTopState, { passive: true });
-
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".site-nav");
-
-    if (toggle && nav) {
-        toggle.addEventListener("click", () => {
-            const opened = nav.classList.toggle("is-open");
-            toggle.classList.toggle("is-open", opened);
-            toggle.setAttribute("aria-expanded", opened ? "true" : "false");
-        });
-    }
-});
-</script>
 </html>

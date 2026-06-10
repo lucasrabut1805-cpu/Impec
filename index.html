@@ -19,7 +19,7 @@
         <section class="hero-home">
             <div class="hero-media">
                 <video autoplay muted loop playsinline preload="auto" poster="assets/img/header-bg.jpg">
-                    <source src="assets/img/videohero.mp4" type="video/mp4">
+                    <source src="assets/img/videofinal.mp4" type="video/mp4">
                     Votre navigateur ne supporte pas la vidéo HTML5.
                 </video>
             </div>
@@ -99,7 +99,7 @@
                     <div class="services-home-grid">
                         <article class="service-home-card">
                             <div class="service-home-card-media">
-                                <img src="assets/img/service3.jpeg" alt="Identité visuelle">
+                                <img src="assets/img/service3.png" alt="Identité visuelle">
                             </div>
 
                             <div class="service-home-card-content">
@@ -290,78 +290,10 @@
     <div data-include="partials/footer.html"></div>
 
     <script src="assets/js/includes.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const panels = gsap.utils.toArray(".home-stack-panel");
-    const scene = document.querySelector(".home-stack-scene");
-
-    if (!scene || panels.length < 2) return;
-
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: scene,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1.1
-        }
-    });
-
-    panels.forEach((panel, index) => {
-        if (index === 0) return;
-
-        tl.to(panel, {
-            yPercent: -100,
-            ease: "none",
-            duration: 1
-        });
-    });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const updateTopState = () => {
-        document.body.classList.toggle("is-at-top", window.scrollY <= 10);
-    };
-
-    updateTopState();
-    window.addEventListener("scroll", updateTopState, { passive: true });
-
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".site-nav");
-
-    if (toggle && nav) {
-        toggle.addEventListener("click", () => {
-            const opened = nav.classList.toggle("is-open");
-            toggle.classList.toggle("is-open", opened);
-            toggle.setAttribute("aria-expanded", opened ? "true" : "false");
-        });
-    }
-});
-</script>
-<script>
-document.querySelectorAll('.project-card-stack').forEach(card => {
-    card.addEventListener('click', function(e) {
-
-        const radioId = this.getAttribute('for');
-        const radio = document.getElementById(radioId);
-
-        // Si déjà sélectionné = ouvrir le projet
-        if (radio.checked) {
-            const link = this.dataset.link;
-            window.location.href = link;
-        }
-
-        // Sinon → juste sélectionner (slider)
-    });
-});
-</script>
 </body>
 </html>

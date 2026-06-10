@@ -1,0 +1,362 @@
+/* =========================================================
+   HEADER + MENU
+========================================================= */
+function initHeader() {
+    if (!document.body.dataset.headerScrollBound) {
+        document.body.dataset.headerScrollBound = "true";
+
+        const updateTopState = () => {
+            document.body.classList.toggle("is-at-top", window.scrollY <= 10);
+        };
+
+        updateTopState();
+        window.addEventListener("scroll", updateTopState, { passive: true });
+    }
+
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (toggle && nav && !toggle.dataset.bound) {
+        toggle.dataset.bound = "true";
+
+        toggle.addEventListener("click", () => {
+            const opened = nav.classList.toggle("is-open");
+            toggle.classList.toggle("is-open", opened);
+            toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+        });
+    }
+}
+
+/* =========================================================
+   MENU ACTIF
+========================================================= */
+function initActiveMenu() {
+    const currentPage = document.body.dataset.page;
+    if (!currentPage) return;
+
+    document.querySelectorAll(".nav-list a").forEach((link) => {
+        if (link.dataset.link === currentPage) {
+            link.classList.add("active");
+        }
+    });
+}
+
+/* =========================================================
+   REVEAL ON SCROLL
+========================================================= */
+function initRevealAnimations() {
+    const revealItems = Array.from(document.querySelectorAll(".reveal-on-scroll"));
+
+    if (!revealItems.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+    }
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const el = entry.target;
+            const delay = el.dataset.revealDelay || "0";
+
+            if (entry.isIntersecting) {
+                el.style.transitionDelay = `${delay}ms`;
+                el.classList.add("is-visible");
+            } else {
+                el.classList.remove("is-visible");
+                el.style.transitionDelay = "0ms";
+            }
+        });
+    }, {
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px"
+    });
+
+    revealItems.forEach((item) => {
+        if (!item.dataset.revealBound) {
+            item.dataset.revealBound = "true";
+            revealObserver.observe(item);
+        }
+    });
+}
+
+/* =========================================================
+   AOS
+========================================================= */
+function initAOS() {
+    if (!window.AOS) return;
+
+    AOS.init({
+        once: false,
+        mirror: true,
+        duration: 900,
+        offset: 120,
+        easing: "ease-out-cubic",
+        anchorPlacement: "top-bottom"
+    });
+
+    setTimeout(() => {
+        AOS.refreshHard();
+    }, 100);
+}
+
+/* =========================================================
+   GSAP SPLIT TEXT
+========================================================= */
+function initSplitText() {
+    if (
+        typeof gsap === "undefined" ||
+        typeof SplitText === "undefined"
+    ) return;
+
+    gsap.registerPlugin(SplitText);
+
+    document.querySelectorAll(".js-split-words").forEach((element, index) => {
+        if (element.dataset.splitBound) return;
+        element.dataset.splitBound = "true";
+
+        const split = SplitText.create(element, {
+            type: "words"
+        });
+
+        gsap.from(split.words, {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            stagger: 0.06,
+            delay: 0.15 + index * 0.12
+        });
+    });
+}
+
+/* =========================================================
+   SCROLL HORIZONTAL PROJETS
+========================================================= */
+function initProjectBannerScroll() {
+    const section = document.querySelector("[data-project-banner]");
+    const track = document.querySelector("[data-project-banner-track]");
+    const slide = document.querySelector(".project-banner-slide");
+    const progressBar = document.querySelector(".project-progress-bar");
+
+    if (!section || !track || !slide || !progressBar) return;
+    if (section.dataset.bannerBound) return;
+
+    section.dataset.bannerBound = "true";
+
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+    const updateHorizontalScroll = () => {
+        const mobile = window.matchMedia("(max-width: 768px)").matches;
+        const touch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+        if (mobile || touch) {
+            track.style.transform = "none";
+            track.style.paddingLeft = "0px";
+            track.style.paddingRight = "0px";
+            progressBar.style.width = "0%";
+            return;
+        }
+
+        const slideWidth = slide.offsetWidth;
+        const viewportWidth = window.innerWidth;
+        const sideOffset = Math.max((viewportWidth - slideWidth) / 2, 0);
+
+        track.style.paddingLeft = `${sideOffset}px`;
+        track.style.paddingRight = `${sideOffset}px`;
+
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const viewportH = window.innerHeight;
+        const maxScroll = Math.max(sectionHeight - viewportH, 1);
+
+        const current = clamp(window.scrollY - sectionTop, 0, maxScroll);
+        const maxTranslate = Math.max(track.scrollWidth - viewportWidth, 0);
+        const progress = current / maxScroll;
+
+        track.style.transform = `translateX(-${progress * maxTranslate}px)`;
+        progressBar.style.width = `${progress * 100}%`;
+    };
+
+    const initBanner = () => {
+        updateHorizontalScroll();
+        window.addEventListener("scroll", updateHorizontalScroll, { passive: true });
+        window.addEventListener("resize", updateHorizontalScroll);
+    };
+
+    const bannerImg = slide.querySelector("img");
+
+    if (bannerImg && !bannerImg.complete) {
+        bannerImg.addEventListener("load", initBanner, { once: true });
+    } else {
+        initBanner();
+    }
+}
+
+/* =========================================================
+   PROJETS ALÉATOIRES
+========================================================= */
+function initRandomProjects() {
+    const randomProjectsContainer = document.getElementById("random-projects");
+    const currentProject = document.body.dataset.projectCurrent;
+
+    if (!randomProjectsContainer) return;
+    if (randomProjectsContainer.dataset.randomBound) return;
+
+    randomProjectsContainer.dataset.randomBound = "true";
+
+    const projects = [
+        {
+            url: "projet1.html",
+            title: "PJBC — Identité visuelle et communication club",
+            image: "assets/img/heroprojet1.jpeg",
+            text: "Création d’une direction visuelle plus forte et immersive pour accompagner la communication du club sur différents supports.",
+            tags: ["Direction artistique", "Conception graphique", "Réseaux sociaux"]
+        },
+        {
+            url: "projet2.html",
+            title: "Course de Côte — Direction visuelle",
+            image: "assets/img/heroprojet2.jpeg",
+            text: "Une approche plus éditoriale et immersive pour structurer la communication sur plusieurs supports.",
+            tags: ["Direction visuelle", "Affiches", "Social media"]
+        },
+        {
+            url: "projet3.html",
+            title: "Isidor — Design de communication",
+            image: "assets/img/heroprojet3.jpeg",
+            text: "Conception d’un univers graphique clair et cohérent, pensé pour valoriser le projet sur plusieurs formats.",
+            tags: ["Campagne visuelle", "Communication", "Supports événementiels"]
+        },
+        {
+            url: "projet4.html",
+            title: "Impec Studio — Identité visuelle et communication",
+            image: "assets/img/heroprojet4.jpeg",
+            text: "Travail graphique pensé pour rendre la communication plus lisible, plus moderne et plus marquante.",
+            tags: ["Direction visuelle", "Supports print", "Réseaux sociaux"]
+        },
+        {
+            url: "projet5.html",
+            title: "Peli'camp — Communication visuelle",
+            image: "assets/img/heroprojet5.jpeg",
+            text: "Travail graphique pensé pour rendre la communication plus lisible, plus moderne et plus marquante.",
+            tags: ["Direction visuelle", "Supports print", "Réseaux sociaux"]
+        }
+    ];
+
+    const shuffleArray = (array) => {
+        const newArray = [...array];
+
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+
+        return newArray;
+    };
+
+    const filteredProjects = projects.filter((project) => project.url !== currentProject);
+    const selectedProjects = shuffleArray(filteredProjects).slice(0, 2);
+
+    randomProjectsContainer.innerHTML = selectedProjects.map((project, index) => `
+        <a href="${project.url}" class="project-card-page project-card-page-detailed reveal-on-scroll ${index === 0 ? "reveal-left" : "reveal-right"}">
+            <div class="project-card-page-media">
+                <img src="${project.image}" alt="${project.title}">
+            </div>
+            <div class="project-card-content project-card-content-visible">
+                <h3>${project.title}</h3>
+                <p>${project.text}</p>
+                <div class="project-inline-buttons">
+                    ${project.tags.map((tag) => `
+                        <button class="btn btn-hero small-btn" type="button">
+                            <span>${tag}</span>
+                            <span class="btn-fill-line"></span>
+                        </button>
+                    `).join("")}
+                </div>
+            </div>
+        </a>
+    `).join("");
+
+    initRevealAnimations();
+}
+
+/* =========================================================
+   HOME STACK GSAP
+========================================================= */
+function initHomeStack() {
+    if (
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+    ) return;
+
+    const scene = document.querySelector(".home-stack-scene");
+    const panels = gsap.utils.toArray(".home-stack-panel");
+
+    if (!scene || panels.length < 2) return;
+    if (scene.dataset.homeStackBound) return;
+
+    scene.dataset.homeStackBound = "true";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: scene,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1.1
+        }
+    });
+
+    panels.forEach((panel, index) => {
+        if (index === 0) return;
+
+        tl.to(panel, {
+            yPercent: -100,
+            ease: "none",
+            duration: 1
+        });
+    });
+}
+
+/* =========================================================
+   CARTES PROJETS HOME
+========================================================= */
+function initProjectCards() {
+    document.querySelectorAll(".project-card-stack").forEach((card) => {
+        if (card.dataset.cardBound) return;
+
+        card.dataset.cardBound = "true";
+
+        card.addEventListener("click", function () {
+            const radioId = this.getAttribute("for");
+            const radio = document.getElementById(radioId);
+
+            if (radio && radio.checked) {
+                const link = this.dataset.link;
+
+                if (link) {
+                    window.location.href = link;
+                }
+            }
+        });
+    });
+}
+
+/* =========================================================
+   INIT GLOBAL
+========================================================= */
+function initSite() {
+    initHeader();
+    initActiveMenu();
+    initRevealAnimations();
+    initAOS();
+    initSplitText();
+    initProjectBannerScroll();
+    initRandomProjects();
+    initHomeStack();
+    initProjectCards();
+}
+
+document.addEventListener("DOMContentLoaded", initSite);
+document.addEventListener("includes:loaded", initSite);

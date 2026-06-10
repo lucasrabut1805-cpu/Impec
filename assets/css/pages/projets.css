@@ -1,0 +1,492 @@
+
+/* =========================================================
+   PAGE PROJETS
+========================================================= */
+
+/* =========================
+   PROJETS.HTML
+========================= */
+.projects-page .container-wide,
+.projects-page .container {
+    width: min(90%, 2200px);
+}
+
+.projects-page {
+    background: transparent;
+}
+
+.projects-grid-page {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.project-card-page {
+    transition: transform 0.4s ease;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-stroke);
+    border-radius: 26px;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-soft);
+}
+
+.project-card-page img {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.project-card-page:hover img {
+    transform: scale(1.08);
+}
+
+.project-card-page:hover {
+    transform: translateY(-6px);
+}
+
+.project-card-content {
+    display: none;
+}
+
+.project-card-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.projects-grid-page-2col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card-page-detailed {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    overflow: visible;
+    border-radius: 0;
+}
+
+.project-card-page-media {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.project-card-page-media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.project-card-content-visible {
+    display: block;
+    padding: 20px 0 0;
+}
+
+.project-card-content-visible h3 {
+    font-size: 1.55rem;
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+.project-card-content-visible p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.68;
+}
+
+.project-card-tags {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.project-inline-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.project-inline-buttons .small-btn {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 0.85rem;
+    width: auto;
+}
+
+.project-inline-buttons .small-btn span {
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* =========================
+   PROJETS DÉTAILS - GÉNÉRIQUE
+========================= */
+.project-context,
+.project-gallery,
+.other-projects {
+    padding-top: 2rem;
+}
+
+.project-context h2,
+.project-gallery h2,
+.other-projects h2,
+.project-services .section-title {
+    margin-bottom: 1.4rem;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    letter-spacing: -0.03em;
+}
+
+.project-text {
+    max-width: 820px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.other-projects .projects-grid-page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* =========================================================
+   PAGE PROJETS DÉTAILS — COMMUN
+========================================================= */
+
+.project-detail-page {
+    background: transparent;
+}
+
+/* HERO */
+.project-hero {
+    position: relative;
+    width: 100%;
+    padding-top: 0;
+    margin-top: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+.project-hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background: transparent;
+}
+
+.project-hero-fade {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 220px;
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 4, 10, 0) 0%,
+        rgba(5, 4, 10, 0.24) 30%,
+        rgba(5, 4, 10, 0.68) 68%,
+        rgba(5, 4, 10, 0.94) 88%,
+        rgba(5, 4, 10, 1) 100%
+    );
+    pointer-events: none;
+}
+
+/* INTRO */
+.project-editorial {
+    position: relative;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.project-editorial::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(235, 7, 7, 0.10), transparent 24%),
+        radial-gradient(circle at 82% 72%, rgba(235, 7, 7, 0.12), transparent 22%);
+    pointer-events: none;
+}
+
+.project-editorial-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 3.2rem;
+    align-items: start;
+}
+
+.project-editorial-left h2 {
+    font-size: clamp(3.2rem, 4.4vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    max-width: 720px;
+}
+
+.project-editorial-right {
+    padding-top: 55px;
+}
+
+.project-editorial-right p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.project-editorial-right p + p {
+    margin-top: 1.35rem;
+}
+
+.project-meta-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-meta-item {
+    padding: 1.2rem 1.1rem;
+    border-radius: 22px;
+}
+
+.project-meta-item.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.project-meta-item.glass-card::before {
+    display: none;
+}
+
+.project-meta-item span {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.project-meta-item strong {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.project-editorial-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.project-editorial-actions .btn {
+    min-height: 46px;
+    padding: 0 20px;
+    width: auto;
+}
+
+.project-btn-icon {
+    min-width: 140px;
+}
+
+.project-btn-icon {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    padding: 0;
+    border-radius: 999px;
+}
+
+.project-btn-logo {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+
+.project-btn-icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* BANNIÈRE HORIZONTALE COMMUNE */
+.project-banner-section {
+    position: relative;
+    min-height: 220vh;
+    background: transparent;
+}
+
+.project-banner-section.project-banner-section--long {
+    min-height: 260vh;
+}
+
+.project-banner-sticky {
+    position: sticky;
+    top: calc(var(--header-height) + 18px);
+    height: calc(100vh - var(--header-height) - 34px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.project-banner-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 0;
+    will-change: transform;
+}
+
+.project-banner-slide {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.project-banner-image {
+    display: block;
+    width: auto;
+    height: calc(100vh - var(--header-height) - 34px);
+    max-width: none;
+    object-fit: contain;
+    object-position: center center;
+    border-radius: 0;
+    box-shadow: none;
+    image-rendering: auto;
+}
+
+.project-progress {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: min(42vw, 520px);
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.10);
+    overflow: hidden;
+    z-index: 30;
+}
+
+.project-progress-bar {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 163, 163, 0.7) 20%,
+        rgba(255, 99, 99, 0.45) 50%,
+        rgba(255, 51, 51, 0.7) 80%,
+        rgb(255, 38, 38) 100%
+    );
+    box-shadow: 0 0 12px rgba(255,255,255,0.18);
+}
+
+/* STRIP COMMUN */
+.project-strip {
+    overflow: hidden;
+    padding: 8rem 0 0;
+    margin-top: -10px;
+}
+
+.project-strip-wrap {
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.project-strip-track {
+    display: flex;
+    gap: 1.3rem;
+    width: max-content;
+    animation: pjbcStripScroll 24s linear infinite;
+    padding: 0.4rem 0 1rem;
+}
+
+.project-strip-item {
+    flex: 0 0 280px;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.project-strip-item:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.project-strip-item:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.project-strip-item img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
+    background: transparent;
+}
+
+/* AUTRES PROJETS COMMUN */
+.project-next-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.project-next-grid .project-card-page {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    overflow: visible;
+    border-radius: 0;
+}
+
+.project-next-grid .project-card-page-media {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.project-next-grid .project-card-page-media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.project-next-grid .project-card-content-visible {
+    display: block;
+    padding: 20px 0 0;
+}
