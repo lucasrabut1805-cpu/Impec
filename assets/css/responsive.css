@@ -2,11 +2,6 @@
    RESPONSIVE
    Ordre : grand écran vers petit écran
 ========================================================= */
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 
 /* =========================================================
    RESPONSIVE — ≤ 1600px
@@ -1885,15 +1880,6 @@ body {
         pointer-events: none;
     }
 
-    .project-banner-section,
-    .project-banner-sticky {
-        overflow: hidden;
-    }
-
-    .project-banner-track {
-        overflow: visible;
-    }
-
     .site-nav.is-open {
         opacity: 1;
         visibility: visible;
@@ -2082,7 +2068,7 @@ body {
     }
 
     .center-button-1 {
-        margin-top: 180px;
+        margin-top: 250px;
     }
 
     .projects-stage {
@@ -2116,10 +2102,10 @@ body {
 
 
     .studio-hero-text {
-        width: 52%;
+        width: 45%;
         max-width: 320px;
         text-align: left;
-        margin-left: 24px;
+        margin-left: 45px;
     }
 
     .studio-hero-title {
@@ -2372,7 +2358,7 @@ body {
     }
 
     .center-button-1 {
-        margin-top: 180px;
+        margin-top: 250px;
     }
 
     .services-heading,
@@ -2550,7 +2536,7 @@ body {
     }
 
     .center-button-1 {
-        margin-top: 190px;
+        margin-top: 260px;
     }
 
     .footer-top {
