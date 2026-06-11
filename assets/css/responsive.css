@@ -2,6 +2,11 @@
    RESPONSIVE
    Ordre : grand écran vers petit écran
 ========================================================= */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 /* =========================================================
    RESPONSIVE — ≤ 1600px
@@ -1863,12 +1868,6 @@
    RESPONSIVE — ≤ 768px
 ========================================================= */
 @media (max-width: 768px) {
-.menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .site-nav {
         position: absolute;
         top: calc(100% + 10px);
@@ -1884,6 +1883,15 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+    }
+
+    .project-banner-section,
+    .project-banner-sticky {
+        overflow: hidden;
+    }
+
+    .project-banner-track {
+        overflow: visible;
     }
 
     .site-nav.is-open {
@@ -2014,6 +2022,22 @@
             linear-gradient(to bottom, rgba(5, 4, 10, 0.92), rgba(5, 4, 10, 0.45) 55%, rgba(5, 4, 10, 0));
     }
 
+    .service-row-media {
+        border-radius: 28px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    .service-row-media img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 28px;
+        object-fit: cover;
+    }
+
     .services-home-grid {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -2058,7 +2082,7 @@
     }
 
     .center-button-1 {
-        margin-top: 130px;
+        margin-top: 180px;
     }
 
     .projects-stage {
@@ -2161,10 +2185,31 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-.menu-toggle {
+    .menu-toggle {
         display: inline-flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 5px;
+        width: 48px;
+        height: 48px;
+        background: transparent;
+        border: 0;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 163, 163, 0.7) 20%,
+            rgba(255, 99, 99, 0.45) 50%,
+            rgba(255, 51, 51, 0.7) 80%,
+            rgb(255, 38, 38) 100%
+        );
     }
 
     .site-header {
@@ -2327,7 +2372,7 @@
     }
 
     .center-button-1 {
-        margin-top: 125px;
+        margin-top: 180px;
     }
 
     .services-heading,
@@ -2505,7 +2550,7 @@
     }
 
     .center-button-1 {
-        margin-top: 120px;
+        margin-top: 190px;
     }
 
     .footer-top {
@@ -2525,31 +2570,87 @@
         line-height: 1.45;
     }
 
+    .studio-hero {
+        min-height: 78vh;
+    }
+
     .studio-hero-stage {
-        grid-template-columns: 1fr;
-        padding: 16px 0 10px;
+        min-height: 78vh;
+        padding: 90px 0 40px;
+        display: flex;
         align-items: center;
+        justify-content: flex-start;
+    }
+
+    .studio-hero-portrait {
+        height: 78vh;
+    }
+
+    .studio-hero-portrait img {
+        height: 100%;
+        object-fit: cover;
+        object-position: 68% center;
     }
 
     .studio-hero-text {
-        max-width: 300px;
-        text-align: center;
+        width: 48%;
+        max-width: 260px;
+        margin-left: 22px;
+        text-align: left;
+    }
+
+    .studio-hero-kicker {
+        font-size: 0.58rem;
+        margin-left: 0;
+        margin-bottom: 12px;
     }
 
     .studio-hero-title {
-        font-size: clamp(1.9rem, 8vw, 3.2rem);
-    }
-
-    .studio-hero-title span:last-child {
-        margin-left: 0;
+        font-size: clamp(1.25rem, 6vw, 2rem);
+        line-height: 0.95;
     }
 
     .studio-hero-description {
-        max-width: 100%;
-        margin: 14px auto 0;
+        max-width: 250px;
+        margin: 12px 0 0;
         padding-left: 0;
-        font-size: 0.78rem;
-        line-height: 1.45;
+        font-size: 0.62rem;
+        line-height: 1.35;
+    }
+
+    .about-showcase {
+        display: block;
+        min-height: auto;
+    }
+
+    .about-showcase-left,
+    .about-showcase-right {
+        padding: 34px 22px;
+    }
+
+    .about-showcase-left h2,
+    .about-method-title h2 {
+        font-size: clamp(2rem, 10vw, 3.2rem);
+    }
+
+    .about-showcase-right p,
+    .about-vision-box p {
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }
+
+    .about-vision-box {
+        margin-top: 34px;
+        padding-left: 18px;
+    }
+
+    .about-vision-box::before {
+        height: 120px;
+    }
+    
+
+    .studio-hero-title span:last-child {
+        margin-left: 0;
     }
 
     .studio-hero-description::before {
