@@ -150,14 +150,6 @@ function initProjectBannerScroll() {
         const mobile = window.matchMedia("(max-width: 768px)").matches;
         const touch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
-        if (mobile || touch) {
-            track.style.transform = "none";
-            track.style.paddingLeft = "0px";
-            track.style.paddingRight = "0px";
-            progressBar.style.width = "0%";
-            return;
-        }
-
         const slideWidth = slide.offsetWidth;
         const viewportWidth = window.innerWidth;
         const sideOffset = Math.max((viewportWidth - slideWidth) / 2, 0);

@@ -4,6 +4,31 @@
 ========================================================= */
 
 /* =========================================================
+   RESPONSIVE — ≤ 1600px
+========================================================= */
+@media (min-width: 1600px) {
+    .container {
+        width: min(90%, 1480px);
+    }
+
+    .container-wide {
+        width: min(94%, 1680px);
+    }
+
+    .projects-stage {
+        height: 760px;
+    }
+
+    .project-card-stack {
+        width: min(70vw, 860px);
+    }
+
+    .intro-studio-card {
+        min-height: 720px;
+    }
+}
+
+/* =========================================================
    RESPONSIVE — ≤ 1500px
 ========================================================= */
 @media (max-width: 1500px) {
@@ -384,26 +409,9 @@
         font-size: 0.9rem;
     }
 
-    .intro-studio-card {
-        grid-template-columns: 1fr;
-        min-height: auto;
-    }
-
     .intro-studio-text {
         max-width: none;
         padding: 48px 34px 24px;
-    }
-
-    .intro-studio-visual {
-        min-height: 460px;
-    }
-
-    .intro-studio-visual img {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        min-height: 460px;
-        transform: none;
     }
 
     .services-heading {
@@ -1072,7 +1080,7 @@
         bottom: auto;
         width: 100%;
         height: 120px;
-        background: linear-gradient(to bottom, rgba(10, 10, 14, 1), rgba(10, 10, 14, 0));
+        background: linear-gradient(to top, rgba(10, 10, 14, 1), rgba(10, 10, 14, 0));
     }
 
     .footer-main {
@@ -1202,6 +1210,23 @@
         min-height: 400px;
     }
 
+    .intro-studio-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    }
+
+    .intro-studio-visual {
+        min-height: 420px;
+    }
+
+    .intro-studio-visual img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 420px;
+        transform: none;
+    }
+
     .services-heading {
         margin-left: 0;
         margin-top: 42px;
@@ -1227,7 +1252,7 @@
     }
 
     .center-button-1 {
-        margin-top: 62px;
+        margin-top: 82px;
     }
 
     .projects-stage {
@@ -1235,7 +1260,7 @@
     }
 
     .project-card-stack {
-        width: min(84vw, 620px);
+        width: min(78vw, 560px);
     }
 
     .studio-hero {
@@ -1594,71 +1619,26 @@
    RESPONSIVE — ≤ 900px
 ========================================================= */
 @media (max-width: 900px) {
-.cards-grid,
-    .contact-container,
-    .footer-container {
-        grid-template-columns: 1fr;
+    .projects-stage {
+        height: 520px;
     }
 
-    .header-container {
-        flex-direction: row;
-        position: relative;
+    .project-card-stack {
+        width: min(80vw, 520px);
     }
 
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        background: none;
-        border: auto;
-        cursor: pointer;
+    .center-button-1 {
+        margin-top: 84px;
     }
 
-    .menu-toggle span {
-        width: 28px;
-        height: 3px;
-        background:
-        linear-gradient(
-            to right,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(255, 163, 163, 0.7) 20%,
-            rgba(255, 99, 99, 0.45) 50%,
-            rgba(255, 51, 51, 0.7) 80%,
-            rgb(255, 38, 38) 100%
-        );
-        border-radius: 999px;
+    .project-banner-section {
+        min-height: 190vh;
     }
 
-    .site-nav {
-        display: none;
-        position: absolute;
-        top: 50px;
-        right: 0;
-        width: 125px;
-        padding: 8px;
-        background: rgba(5, 5, 5, 0.96);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 75px;
-    }
-
-    .site-nav.is-open {
-        display: block;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .hero {
-        min-height: 85vh;
+    .project-banner-section.project-banner-section--long {
+        min-height: 220vh;
     }
 }
-
 /* =========================================================
    RESPONSIVE — ≤ 820px
 ========================================================= */
@@ -2042,7 +2022,7 @@
     }
 
     .center-button-1 {
-        margin-top: 66px;
+        margin-top: 90px;
     }
 
     .projects-stage {
@@ -2050,7 +2030,7 @@
     }
 
     .project-card-stack {
-        width: min(90vw, 560px);
+        width: min(82vw, 480px);
     }
 
     .footer-top {
@@ -2220,36 +2200,39 @@
         gap: 0.7rem;
     }
 
-    .project-banner-section,
-    .project-banner-section.project-banner-section--long {
-        min-height: auto;
+    .project-banner-section {
+        min-height: 180vh;
         padding-top: 24px;
     }
 
+    .project-banner-section.project-banner-section--long {
+        min-height: 210vh;
+    }
+
     .project-banner-sticky {
-        position: relative;
-        top: auto;
-        height: auto;
-        overflow: visible;
-        display: block;
+        position: sticky;
+        top: calc(var(--header-height) + 10px);
+        height: calc(100vh - var(--header-height) - 18px);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
     }
 
     .project-banner-track {
-        display: block;
-        width: 100%;
-        transform: none !important;
-        padding: 0 !important;
+        display: flex;
+        width: max-content;
+        transform: none;
+        padding: 0 4vw;
     }
 
     .project-banner-slide {
-        display: block;
-        width: 100%;
+        flex: 0 0 92vw;
+        width: 92vw;
     }
 
     .project-banner-image {
         width: 100%;
-        height: auto;
-        max-width: 100%;
+        height: calc(100vh - var(--header-height) - 18px);
         object-fit: contain;
     }
 
@@ -2466,7 +2449,7 @@
     }
 
     .project-card-stack {
-        width: min(94vw, 420px);
+        width: min(86vw, 360px);
     }
 
     .projects-home .section-heading,
