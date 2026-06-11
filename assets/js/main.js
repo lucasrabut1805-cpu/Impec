@@ -134,55 +134,38 @@ function initSplitText() {
    SCROLL HORIZONTAL PROJETS
 ========================================================= */
 function initProjectBannerScroll() {
-    const section = document.querySelector("[data-project-banner]");
-    const track = document.querySelector("[data-project-banner-track]");
-    const slide = document.querySelector(".project-banner-slide");
-    const progressBar = document.querySelector(".project-progress-bar");
+    const sections = document.querySelectorAll("[data-project-banner]");
 
-    if (!section || !track || !slide || !progressBar) return;
-    if (section.dataset.bannerBound) return;
+    sections.forEach((section) => {
+        const track = section.querySelector("[data-project-banner-track]");
+        const slide = section.querySelector(".project-banner-slide");
+        const progressBar = section.querySelector(".project-progress-bar");
 
-    section.dataset.bannerBound = "true";
+        if (!track || !slide || !progressBar) return;
 
-    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+        const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
-    const updateHorizontalScroll = () => {
-        const mobile = window.matchMedia("(max-width: 768px)").matches;
-        const touch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+        const updateHorizontalScroll = () => {
+            const viewportWidth = window.innerWidth;
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const viewportH = window.innerHeight;
 
-        const slideWidth = slide.offsetWidth;
-        const viewportWidth = window.innerWidth;
-        const sideOffset = Math.max((viewportWidth - slideWidth) / 2, 0);
+            const maxScroll = Math.max(sectionHeight - viewportH, 1);
+            const current = clamp(window.scrollY - sectionTop, 0, maxScroll);
+            const progress = current / maxScroll;
 
-        track.style.paddingLeft = `${sideOffset}px`;
-        track.style.paddingRight = `${sideOffset}px`;
+            const maxTranslate = Math.max(track.scrollWidth - viewportWidth, 0);
 
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const viewportH = window.innerHeight;
-        const maxScroll = Math.max(sectionHeight - viewportH, 1);
+            track.style.transform = `translateX(-${progress * maxTranslate}px)`;
+            progressBar.style.width = `${progress * 100}%`;
+        };
 
-        const current = clamp(window.scrollY - sectionTop, 0, maxScroll);
-        const maxTranslate = Math.max(track.scrollWidth - viewportWidth, 0);
-        const progress = current / maxScroll;
-
-        track.style.transform = `translateX(-${progress * maxTranslate}px)`;
-        progressBar.style.width = `${progress * 100}%`;
-    };
-
-    const initBanner = () => {
         updateHorizontalScroll();
+
         window.addEventListener("scroll", updateHorizontalScroll, { passive: true });
         window.addEventListener("resize", updateHorizontalScroll);
-    };
-
-    const bannerImg = slide.querySelector("img");
-
-    if (bannerImg && !bannerImg.complete) {
-        bannerImg.addEventListener("load", initBanner, { once: true });
-    } else {
-        initBanner();
-    }
+    });
 }
 
 /* =========================================================
