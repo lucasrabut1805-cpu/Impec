@@ -6,11 +6,18 @@ function initHeader() {
         document.body.dataset.headerScrollBound = "true";
 
         const updateTopState = () => {
-            document.body.classList.toggle("is-at-top", window.scrollY <= 10);
-        };
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-        updateTopState();
-        window.addEventListener("scroll", updateTopState, { passive: true });
+        if (isMobile) {
+            document.body.classList.add("is-at-top");
+        } else {
+            document.body.classList.toggle("is-at-top", window.scrollY <= 10);
+        }
+    };
+
+    updateTopState();
+    window.addEventListener("scroll", updateTopState, { passive: true });
+    window.addEventListener("resize", updateTopState);
     }
 
     const toggle = document.querySelector(".menu-toggle");

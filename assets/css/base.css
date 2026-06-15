@@ -119,6 +119,16 @@
 /* =========================================================
    BASE
 ========================================================= */
+/* Bloquer le débordement horizontal partout */
+body:not([data-project-current]) {
+    overflow-x: hidden;
+}
+
+/* Autoriser les bannières horizontales des projets */
+body[data-project-current] {
+    overflow-x: visible;
+}
+
 html {
     scroll-behavior: smooth;
 }
