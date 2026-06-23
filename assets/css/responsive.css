@@ -1948,8 +1948,14 @@
     .site-header {
         position: fixed;
         top: 8px;
-        left: 0;
-        width: 100%;
+        left: 6px;
+        right: 6px;
+
+        width: auto;
+        max-width: none;
+        padding: 0;
+
+        box-sizing: border-box;
         z-index: 9999;
     }
 
@@ -2016,9 +2022,15 @@
     }
 
     .header-shell {
+        width: 100%;
+        max-width: 100%;
         min-height: 54px;
-        padding-left: 2px;
-        padding-right: 4px;
+
+        margin: 0;
+        padding-left: 6px;
+        padding-right: 6px;
+
+        box-sizing: border-box;
         border-radius: 999px;
     }
 
@@ -2661,14 +2673,24 @@
 
     .site-header {
         top: 6px;
-        padding: 0 4px;
+        left: 4px;
+        right: 4px;
+
+        width: auto;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .header-shell {
+        width: 100%;
+        max-width: 100%;
         min-height: 50px;
-        padding-left: 1px;
-        padding-right: 3px;
-        border-radius: 999px;
+
+        margin: 0;
+        padding-left: 4px;
+        padding-right: 4px;
+
+        box-sizing: border-box;
     }
 
     .brand {

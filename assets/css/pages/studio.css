@@ -172,13 +172,17 @@
 
 .studio-hero-description {
     position: relative;
+    width: 100%;
     max-width: 900px;
-    margin-top: 10%;
-    margin-left: 400px;
-    padding-left: 28px;
+    margin: 60px auto 0;
+    padding: 0 28px;
+    box-sizing: border-box;
+    margin-top: 90px;
     color: rgb(255, 255, 255);
     font-size: 1rem;
     line-height: 1.7;
+    text-align: justify;
+    text-align-last: center;
 }
 
 
