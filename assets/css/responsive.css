@@ -2986,3 +2986,44 @@
         overflow-x: visible;
     }
 }
+
+/* Correction définitive header/menu mobile */
+@media (max-width: 768px) {
+    .site-header {
+        left: 0;
+        right: 0;
+        width: auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding-left: 6px;
+        padding-right: 6px;
+        overflow: visible;
+    }
+
+    .header-shell {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .site-nav {
+        left: 6px;
+        right: 6px;
+        width: auto;
+        max-width: none;
+        transform: none;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 560px) {
+    .site-header {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .site-nav {
+        left: 4px;
+        right: 4px;
+    }
+}
