@@ -2652,7 +2652,7 @@
     }
 
     .page-hero .titre-img-projets {
-        margin-top: -90px;
+        margin-top: -170px;
     }
 
     .section {
@@ -2816,92 +2816,243 @@
         line-height: 1.45;
     }
 
-    .studio-hero {
-        min-height: 78vh;
-    }
+    /* =========================================================
+   PAGE STUDIO MOBILE
+========================================================= */
 
-    .studio-hero-stage {
-        min-height: 78vh;
-        padding: 90px 0 40px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
+/* Image hero */
+.studio-hero {
+    position: relative;
+    height: 68vh;
+    min-height: 68vh;
+    padding-top: 0;
+    overflow: hidden;
+}
 
-    .studio-hero-portrait {
-        height: 78vh;
-    }
+.studio-hero-content {
+    width: 100%;
+    height: 100%;
+}
 
-    .studio-hero-portrait img {
-        height: 100%;
-        object-fit: cover;
-        object-position: 68% center;
-    }
+.studio-hero-stage {
+    width: 100%;
+    height: 68vh;
+    min-height: 68vh;
+    padding: 0;
+}
 
-    .studio-hero-text {
-        width: 48%;
-        max-width: 260px;
-        margin-left: 22px;
-        text-align: left;
-    }
+/* Image de fond */
+.studio-hero-portrait {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 68vh;
+}
 
-    .studio-hero-kicker {
-        font-size: 0.58rem;
-        margin-left: 0;
-        margin-bottom: 12px;
-    }
+.studio-hero-portrait img {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
 
-    .studio-hero-title {
-        font-size: clamp(1.25rem, 6vw, 2rem);
-        line-height: 0.95;
-    }
+    object-fit: cover;
+    object-position: 68% center;
+}
 
-    .studio-hero-description {
-        max-width: 250px;
-        margin: 12px 0 0;
-        padding-left: 0;
-        font-size: 0.62rem;
-        line-height: 1.35;
-    }
+/* Dégradé en bas de l’image */
+.studio-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
 
-    .about-showcase {
-        display: block;
-        min-height: auto;
-    }
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 4, 10, 0) 0%,
+        rgba(5, 4, 10, 0) 45%,
+        rgba(5, 4, 10, 0.20) 60%,
+        rgba(5, 4, 10, 0.55) 76%,
+        rgba(5, 4, 10, 0.72) 82%,
+        rgba(0, 0, 0, 0.88) 91%,
+        rgba(0, 0, 0, 0.95) 95%,
+        rgb(0, 0, 0) 100%
+    );
+}
 
-    .about-showcase-left,
-    .about-showcase-right {
-        padding: 34px 22px;
-    }
+.page-hero.page-hero-small {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
-    .about-showcase-left h2,
-    .about-method-title h2 {
-        font-size: clamp(2rem, 10vw, 3.2rem);
-    }
+.page-hero .titre-img-projets {
+    width: 92%;
+    margin: -25px auto 0;
+    display: block;
+}
 
-    .about-showcase-right p,
-    .about-vision-box p {
-        font-size: 0.92rem;
-        line-height: 1.55;
-    }
+/* Masquer le titre et le kicker uniquement sur téléphone */
+.studio-hero-kicker,
+.studio-hero-title {
+    display: none;
+}
 
-    .about-vision-box {
-        margin-top: 34px;
-        padding-left: 18px;
-    }
+/* Premier texte placé en bas de l’image */
+.studio-hero-text {
+    position: relative;
+    z-index: 3;
 
-    .about-vision-box::before {
-        height: 120px;
-    }
-    
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 34px;
 
-    .studio-hero-title span:last-child {
-        margin-left: 0;
-    }
+    box-sizing: border-box;
+    text-align: center;
+}
 
-    .studio-hero-description::before {
-        display: none;
-    }
+.studio-intro {
+    padding-left: 34px;
+    padding-right: 34px;
+    box-sizing: border-box;
+}
+
+.studio-hero-description {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+
+    font-size: 0.92rem;
+    line-height: 1.65;
+
+    text-align: justify;
+    text-align-last: center;
+    hyphens: auto;
+}
+
+.studio-hero-description::after {
+    content: "";
+    display: block;
+
+    width: 220px;
+    max-width: 70%;
+    height: 1px;
+
+    margin: 30px auto 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 163, 163, 0.7) 20%,
+        rgba(255, 99, 99, 0.45) 50%,
+        rgba(255, 51, 51, 0.7) 80%,
+        rgb(255, 38, 38) 100%
+    );
+}
+
+
+/* =========================================================
+   BLOCS DE TEXTE STUDIO
+========================================================= */
+
+/* Remonter et centrer tout l’ensemble */
+.about-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: auto;
+    margin-top: -60px;
+    gap: 32px;
+}
+
+/* Même largeur et même espace sur les côtés */
+.about-showcase-left,
+.about-showcase-right {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 22px;
+
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Premier bloc */
+.about-showcase-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    order: 1;
+}
+
+/* Deuxième bloc */
+.about-showcase-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding-top: 0;
+    margin-top: -50px;
+    order: 3;
+}
+
+/* Supprimer la ligne verticale ordinateur */
+.about-showcase::after {
+    display: none;
+}
+
+/* Ligne horizontale entre les deux parties */
+.about-showcase::before {
+    width: 220px;
+    height: 1px;
+    margin: 0 auto;
+    order: 2;
+}
+
+/* Centrer les titres */
+.about-showcase-left-title {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.about-method-title {
+    width: 100%;
+    margin: -25px 0 0;
+    text-align: center;
+}
+
+.about-showcase-left h2,
+.about-method-title h2 {
+    margin: 0;
+
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    text-align: center;
+}
+
+/* Justifier les trois textes */
+.about-showcase-left p,
+.about-showcase-right > p,
+.about-vision-box p {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+
+    font-size: 0.92rem;
+    line-height: 1.65;
+
+    text-align: justify;
+    text-align-last: center;
+    hyphens: auto;
+}
+
+/* Bloc Ma vision */
+.about-vision-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-left: 0;
+}
 
     .contact-shell {
         padding: 16px;
@@ -2987,43 +3138,25 @@
     }
 }
 
-/* Correction définitive header/menu mobile */
+/* Correction menu mobile toutes tailles */
 @media (max-width: 768px) {
-    .site-header {
-        left: 0;
-        right: 0;
-        width: auto;
-        max-width: 100%;
-        box-sizing: border-box;
-        padding-left: 6px;
-        padding-right: 6px;
-        overflow: visible;
-    }
-
-    .header-shell {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
     .site-nav {
-        left: 6px;
-        right: 6px;
+        position: fixed;
+        top: 76px;
+        left: 12px;
+        right: 12px;
         width: auto;
         max-width: none;
         transform: none;
         box-sizing: border-box;
+        z-index: 99999;
     }
 }
 
 @media (max-width: 560px) {
-    .site-header {
-        padding-left: 4px;
-        padding-right: 4px;
-    }
-
     .site-nav {
-        left: 4px;
-        right: 4px;
+        top: 70px;
+        left: 8px;
+        right: 8px;
     }
 }

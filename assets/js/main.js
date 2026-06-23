@@ -314,6 +314,51 @@ function initProjectCards() {
 }
 
 /* =========================================================
+   SWIPE PROJETS HOME MOBILE
+========================================================= */
+function initHomeProjectSwipe() {
+    const showcase = document.querySelector(".projects-home .projects-showcase");
+    if (!showcase || showcase.dataset.swipeBound) return;
+
+    showcase.dataset.swipeBound = "true";
+
+    let startX = 0;
+    let endX = 0;
+
+    const radios = [
+        document.getElementById("project-1"),
+        document.getElementById("project-2"),
+        document.getElementById("project-3")
+    ];
+
+    const getCurrentIndex = () => radios.findIndex((radio) => radio && radio.checked);
+
+    showcase.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    showcase.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+
+        const diff = startX - endX;
+
+        if (Math.abs(diff) < 50) return;
+
+        let currentIndex = getCurrentIndex();
+
+        if (diff > 0) {
+            currentIndex = (currentIndex + 1) % radios.length;
+        } else {
+            currentIndex = (currentIndex - 1 + radios.length) % radios.length;
+        }
+
+        if (radios[currentIndex]) {
+            radios[currentIndex].checked = true;
+        }
+    }, { passive: true });
+}
+
+/* =========================================================
    INIT GLOBAL
 ========================================================= */
 function initSite() {
@@ -326,6 +371,7 @@ function initSite() {
     initRandomProjects();
     initHomeStack();
     initProjectCards();
+    initHomeProjectSwipe();
 }
 
 document.addEventListener("DOMContentLoaded", initSite);
