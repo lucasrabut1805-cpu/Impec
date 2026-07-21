@@ -190,26 +190,38 @@ function initRandomProjects() {
     const projects = [
     {
         url: "projet1.html",
-        title: "Pomjeannais Basket Club — Une saison, une identité",
+        title: "Pomjeannais Basket Club - Une saison, une identité",
         image: "assets/img/heroprojet1.jpeg",
         tags: ["Identité visuelle", "Communication digitale"]
     },
     {
         url: "projet2.html",
-        title: "Course de Côte de La Pommeraye — L'image à grande vitesse",
+        title: "Course de Côte de La Pommeraye - L'image à grande vitesse",
         image: "assets/img/heroprojet2.jpeg",
         tags: ["Direction artistique", "Communication événementielle"]
     },
     {
         url: "projet3.html",
-        title: "Isidor Studio — Une identité qui se porte",
+        title: "Isidor Studio - Une identité qui se porte",
         image: "assets/img/heroprojet3.jpeg",
         tags: ["Direction artistique", "Mise en valeur produit"]
     },
     {
         url: "projet4.html",
-        title: "Pomjeannais Basket Club — Une finale, tout un club",
+        title: "Pomjeannais Basket Club - Une finale, tout un club",
         image: "assets/img/heroprojet4.png",
+        tags: ["Communication événementielle", "Identité visuelle"]
+    },
+    {
+        url: "projet5.html",
+        title: "Péli'camp - L'esprit Betclic Élite, version Péli'camp",
+        image: "assets/img/heroprojet5.png",
+        tags: ["Communication événementielle", "Identité visuelle"]
+    },
+    {
+        url: "projet6.html",
+        title: "R&D Camp 2026 - Une identité qui marque ",
+        image: "assets/img/heroprojet6.png",
         tags: ["Communication événementielle", "Identité visuelle"]
     }
     ];
@@ -356,7 +368,7 @@ function initHomeProjectSwipe() {
             radios[currentIndex].checked = true;
         }
     }, { passive: true });
-}
+}   
 
 /* =========================================================
    INIT GLOBAL
