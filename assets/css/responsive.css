@@ -3299,3 +3299,53 @@
         margin-top: 0;
     }
 }
+/* Autoriser les retours à la ligne après la découpe des mots. */
+body[data-page="accueil"] .services-heading .section-label {
+    display: block;
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* Téléphone : centrer le contenu des packs, conserver le prix à gauche. */
+@media (max-width: 600px) {
+    .packs-home .packs-home__card,
+    .packs-home .packs-home__card-heading h3,
+    .packs-home .packs-home__features,
+    .packs-home .packs-home__summary,
+    .packs-home .packs-home__heading > .packs-home__subtitle {
+        text-align: center;
+    }
+
+    .packs-home .packs-home__features li {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .packs-home .packs-home__features li::before {
+        position: static;
+        display: inline;
+        margin-right: 7px;
+    }
+
+    .packs-home .packs-home__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .packs-home .packs-home__visual {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 15px auto 0;
+        align-self: center;
+        object-fit: contain;
+    }
+
+    .packs-home .packs-home__price {
+        text-align: left;
+    }
+
+
+}
