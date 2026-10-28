@@ -1,0 +1,200 @@
+/* IMPEC STUDIO — Packs compacts : 4 cartes sur une ligne sur ordinateur */
+.packs-home {
+    --packs-accent: #ff0050;
+    padding: 34px 0 58px;
+}
+
+.packs-home .packs-home__container {
+    width: min(96%, 1680px);
+    margin-inline: auto;
+}
+
+/* En-tête compact : le titre en image était aussi très haut */
+.packs-home .packs-home__heading {
+    max-width: none;
+    margin: 0 0 30px;
+    text-align: left;
+}
+
+.packs-home .packs-home__heading .packs-home__image-title {
+    width: min(100%, 590px);
+    margin: 0 auto 8px;
+    line-height: 1;
+}
+
+.packs-home .packs-home__image-title img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.95;
+}
+
+.packs-home .packs-home__heading > .packs-home__subtitle {
+    display: block;
+    margin: 0;
+    color: var(--color-text-soft, #ccc);
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* 4 packs sur une rangée */
+.packs-home .packs-home__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    align-items: stretch;
+}
+
+.packs-home .packs-home__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 30px 15px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.68);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
+}
+
+/* Compatible avec l'ancienne version et avec le HTML contenant packs-home__content */
+.packs-home .packs-home__content {
+    display: contents;
+}
+
+.packs-home .packs-home__card-heading {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.packs-home .packs-home__card-heading h3 {
+    margin: 0;
+    font-family: inherit;
+    font-size: clamp(0.95rem, 1.15vw, 1.18rem);
+    font-weight: 700;
+    line-height: 1.22;
+    overflow-wrap: anywhere;
+}
+
+.packs-home .packs-home__card-heading h3 span {
+    color: var(--packs-accent);
+}
+
+/* Prix en étiquette, légèrement au-dessus du coin gauche de sa carte */
+.packs-home .packs-home__price {
+    position: absolute;
+    top: -13px;
+    left: 12px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 2px;
+    max-width: calc(100% - 24px);
+    margin: 0;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--packs-accent);
+    color: #fff;
+    font-size: 0.84rem;
+    font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.packs-home .packs-home__price span {
+    font-size: 0.82em;
+    font-weight: 700;
+}
+
+.packs-home .packs-home__features {
+    display: grid;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.packs-home .packs-home__features li {
+    position: relative;
+    padding-left: 15px;
+    color: rgba(255, 255, 255, 0.90);
+    font-size: clamp(0.75rem, 0.9vw, 0.87rem);
+    line-height: 1.32;
+    overflow-wrap: anywhere;
+}
+
+.packs-home .packs-home__features li::before {
+    content: "✦";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 0.65rem;
+    line-height: 1.6;
+}
+
+.packs-home .packs-home__summary {
+    margin: 12px 0 0;
+    padding-top: 9px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--color-text-soft, #ccc);
+    font-size: 0.76rem;
+    line-height: 1.35;
+}
+
+.packs-home .packs-home__visual {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 155px;
+    aspect-ratio: auto;
+    object-fit: cover;
+    margin: auto 0 0;
+    padding-top: 8px;
+}
+
+/* Ordinateur portable / fenêtre plus étroite : toujours 4 colonnes */
+@media (min-width: 781px) and (max-width: 1199px) {
+    .packs-home .packs-home__grid { gap: 9px; }
+    .packs-home .packs-home__card { padding: 28px 10px 11px; }
+    .packs-home .packs-home__card-heading h3 { font-size: 0.94rem; }
+    .packs-home .packs-home__features li { font-size: 0.74rem; padding-left: 13px; }
+    .packs-home .packs-home__summary { font-size: 0.71rem; }
+    .packs-home .packs-home__visual { height: 125px; }
+}
+
+/* Tablette : préserver la lisibilité plutôt que forcer 4 cartes minuscules */
+@media (min-width: 601px) and (max-width: 780px) {
+    .packs-home .packs-home__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 29px;
+    }
+    .packs-home .packs-home__card-heading h3 { font-size: 1.1rem; }
+    .packs-home .packs-home__features li { font-size: 0.84rem; }
+}
+
+/* Téléphone : une carte par ligne */
+@media (max-width: 600px) {
+    .packs-home { padding: 35px 0 65px; }
+    .packs-home .packs-home__container { width: 92%; max-width: 480px; }
+    .packs-home .packs-home__heading { margin-bottom: 25px; }
+    .packs-home .packs-home__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 29px;
+    }
+    .packs-home .packs-home__card { padding: 31px 20px 16px; }
+    .packs-home .packs-home__card-heading h3 { font-size: 1.25rem; }
+    .packs-home .packs-home__features li { font-size: 0.89rem; }
+    .packs-home .packs-home__summary { font-size: 0.84rem; }
+    .packs-home .packs-home__visual { height: 180px; max-width: 220px; }
+}
+
+/* Position du titre Mes offres uniquement */
+.packs-home .titre-mes-offres {
+    position: relative;
+    top: -50px;
+}

@@ -477,11 +477,12 @@
     }
 
     .studio-hero-description {
-        max-width: 420px;
-        margin-left: 2rem;
-        margin-right: 0;
-        margin-top: 28px;
-        padding-left: 22px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 85px;
+        padding-left: 28px;
+        padding-right: 28px;
     }
 
     .studio-hero-description::before {
@@ -3268,5 +3269,33 @@
         min-height: auto;
         padding: 12px 14px;
         font-size: 0.92rem;
+    }
+}
+/* Projets : deux colonnes sur ordinateur et tablette. */
+@media (min-width: 769px) {
+    .projects-page .projects-grid-page,
+    .other-projects .projects-grid-page {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .projects-page .projects-grid-page > *,
+    .other-projects .projects-grid-page > * {
+        min-width: 0;
+    }
+}
+
+/* Téléphones : une colonne. */
+@media (max-width: 768px) {
+    .projects-page .projects-grid-page,
+    .other-projects .projects-grid-page {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Accueil mobile : garder Réalisations sous les packs. */
+@media (max-width: 768px) {
+    body[data-page="accueil"] .projects-home .titre-img {
+        margin-top: 0;
     }
 }

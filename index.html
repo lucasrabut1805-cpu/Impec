@@ -8,8 +8,39 @@
         name="description"
         content="Impec Studio accompagne marques, clubs et projets avec des créations graphiques fortes : identité visuelle, affiches, réseaux sociaux et motion design."
     >
+    <!-- Aperçu lors du partage de la page d’accueil -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Impec Studio">
+    <meta property="og:url" content="https://impec-studio.fr/">
+
+    <meta property="og:title"
+        content="Impec Studio — Graphisme, communication &amp; motion design">
+
+    <meta property="og:description"
+        content="Impec Studio accompagne marques, clubs et projets avec des créations graphiques fortes : identité visuelle, affiches, réseaux sociaux et motion design.">
+
+    <meta property="og:image"
+        content="https://impec-studio.fr/assets/img/cartesite.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1004">
+    <meta property="og:image:height" content="650">
+    <meta property="og:image:alt"
+        content="Impec Studio — Graphisme, communication et marketing — Lucas Rabut">
+
+    <!-- Aperçu pour X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+        content="Impec Studio — Graphisme, communication &amp; motion design">
+    <meta name="twitter:description"
+        content="Identité visuelle, affiches, réseaux sociaux et motion design pour les entreprises, associations et clubs sportifs.">
+    <meta name="twitter:image"
+        content="https://impec-studio.fr/assets/img/cartesite.jpeg">
+    <meta name="twitter:image:alt"
+        content="Impec Studio — Graphisme, communication et marketing — Lucas Rabut">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages/packs.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body data-page="accueil">
@@ -214,7 +245,144 @@
                 </div>
             </div>
         </section>
-            
+
+
+        <!-- PACKS -->
+        <section class="packs-home" aria-labelledby="packs-title">
+            <div class="packs-home__container">
+                <div class="packs-home__heading">
+                    <img src="assets/img/mesoffres.png" alt="Mes offres" class="titre-img titre-mes-offres">
+
+                    <p class="section-label packs-home__subtitle">
+                        Des offres simples selon vos besoins
+                    </p>
+                </div>
+                <div class="packs-home__grid">
+                    <article class="packs-home__card">
+                        <div class="packs-home__card-heading">
+                            <h3>Pack <span>coup de boost</span></h3>
+                            <p class="packs-home__price">149 €</p>
+                        </div>
+
+                        <ul class="packs-home__features">
+                            <li>Mini audit de votre communication</li>
+                            <li>3 publications personnalisées</li>
+                            <li>3 stories</li>
+                            <li>Harmonisation visuelle</li>
+                            <li>Idées de contenus</li>
+                        </ul>
+
+                        <p class="packs-home__summary">
+                            Idéal pour relancer votre communication sans engagement
+                        </p>
+
+                        <img
+                            class="packs-home__visual"
+                            src="assets/img/pack1.png"
+                            alt="Exemples de publications graphiques du pack coup de boost"
+                            width="1080"
+                            height="1350"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </article>
+
+                    <article class="packs-home__card">
+                        <div class="packs-home__card-heading">
+                            <h3>Pack <span>présence</span></h3>
+                            <p class="packs-home__price">
+                                290 €<span>/mois</span>
+                            </p>
+                        </div>
+
+                        <ul class="packs-home__features">
+                            <li>4 publications / mois</li>
+                            <li>6 stories</li>
+                            <li>1 contenu vidéo simple</li>
+                            <li>Rédaction des textes de description</li>
+                            <li>Calendrier mensuel des publications</li>
+                        </ul>
+
+                        <p class="packs-home__summary">
+                            Pour communiquer régulièrement sans y passer du temps
+                        </p>
+
+                        <img
+                            class="packs-home__visual"
+                            src="assets/img/pack2.png"
+                            alt="Exemples de communication sur les réseaux sociaux du pack présence"
+                            width="1080"
+                            height="1350"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </article>
+
+                    <article class="packs-home__card">
+                        <div class="packs-home__card-heading">
+                            <h3>Pack <span>accompagnement</span></h3>
+                            <p class="packs-home__price">
+                                450 €<span>/mois</span>
+                            </p>
+                        </div>
+
+                        <ul class="packs-home__features">
+                            <li>8 publications / mois</li>
+                            <li>10 stories</li>
+                            <li>2 contenus vidéos ou carrousels</li>
+                            <li>Rédaction des textes de description</li>
+                            <li>Suivi mensuel</li>
+                        </ul>
+
+                        <p class="packs-home__summary">
+                            Pour déléguer une vraie partie de votre communication
+                        </p>
+
+                        <img
+                            class="packs-home__visual"
+                            src="assets/img/pack3.png"
+                            alt="Exemples de contenus du pack accompagnement pour un atelier vélo"
+                            width="1080"
+                            height="1350"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </article>
+
+                    <article class="packs-home__card">
+                        <div class="packs-home__card-heading">
+                            <h3>Pack <span>club sportif</span></h3>
+                            <p class="packs-home__price">
+                                350 €<span>/mois</span>
+                            </p>
+                        </div>
+
+                        <ul class="packs-home__features">
+                            <li>Visuels matchs et résultats</li>
+                            <li>Déclinaisons stories</li>
+                            <li>1 affiche événements</li>
+                            <li>Mise en avant des partenaires</li>
+                            <li>Template story victoire</li>
+                        </ul>
+
+                        <p class="packs-home__summary">
+                            Une communication cohérente tout au long de la saison
+                        </p>
+
+                        <img
+                            class="packs-home__visual"
+                            src="assets/img/pack4.png"
+                            alt="Exemples d’affiches et de publications du pack club sportif"
+                            width="1080"
+                            height="1350"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </article>
+                </div>
+            </div>
+        </section>
+
 
         <!-- =========================================================
              PROJETS EN APERCU
